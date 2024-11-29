@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero {
+            min-height: 100vh;
+        }
+
+        .hero-card {
+            width: 100%;
+            height: 100vh;
+            background: url(https://img.freepik.com/premium-photo/golden-floral-decorations-white_640852-2660.jpg) no-repeat center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heading {
+
+            font-size: 4rem;
+        }
+
+        .italic {
+            font-family: "Dancing Script", cursive;
+            font-weight: 700;
+        }
+
+        .hero-card h2 {
+            font-size: 1rem;
+            letter-spacing: 40px;
+            font-weight: 300;
+        }
+
+        .hero-card div {
+            line-height: 0.9;
+            text-align: center;
+        }
+
+        .hero-card div * {
+            color: rgb(112, 60, 0);
+        }
+
+        .image {
+            min-height: 100vh;
+            background: url(https://t4.ftcdn.net/jpg/09/80/53/85/360_F_980538543_EavGeyh03xxy542mrIqQHcDwJJRYIa5w.jpg) no-repeat center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image * {
+            color: rgb(112, 60, 0);
+        }
+
+        /* .tree{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        } */
+        .tree {
+            min-height: 40vh;
+            background: url(https://media1.tenor.com/m/WmvV46-afIsAAAAC/flower-blooming.gif) repeat;
+            width: 100%;
+        }
+
+        .border {
+            height: 20px;
+            width: 100%;
+            background: url(https://t3.ftcdn.net/jpg/08/75/57/76/360_F_875577663_rLIlOtzpeknqAG8YoM8WmZpi2cta3cqO.jpg) no-repeat center;
+            background-size: cover;
+        }
+
+        .scan {
+            display: flex;
+            background-color: #e0dfde;
+            padding: 30px;
+            align-items: center;
+        }
+
+        .qr-left {
+            flex: 1;
+        }
+
+        .qr-right {
+            flex: 1;
+        }
+
+        .qr-left img {
+            width: 100%;
+        }
+
+        button {
+            border: none;
+            padding: 10px 30px;
+            margin-top: 20px;
+            background: url(https://t3.ftcdn.net/jpg/08/75/57/76/360_F_875577663_rLIlOtzpeknqAG8YoM8WmZpi2cta3cqO.jpg) no-repeat center;
+            background-size: cover;
+            font-weight: 800;
+            border-radius: 100px;
+            color: #5c3005;
+            transition: 1s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+
+        }
+
+        .address {
+            min-height: 50vh;
+            background: url(https://img.freepik.com/free-vector/black-golden-flowers-background_1017-32462.jpg) no-repeat center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .address * {
+            color: #f1a247;
+        }
+
+        .address h1 {
+            font-size: 3rem;
+        }
+
+        .thanks {
+            display: flex;
+            padding: 30px;
+            align-items: center;
+            background-color: #f7ca9c;
+        }
+
+        .thanks * {
+            color: #5c3005 !important;
+        }
+
+        .left {
+            flex: 1;
+        }
+
+        .right {
+            flex: 1;
+        }
+
+        .right img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border"></div>
+    <audio src="./bgm.mp3" autoplay loop></audio>
+    <div class="hero">
+        <div class="hero-card">
+            <div>
+                <h2 class="subheading">Save The Date</h2><br> <br>
+                <h1 class="heading italic">Prabhakar</h1>
+                <h3 class="italic" style="margin-left: 150px; font-size: 3rem; margin-bottom: 0px;">And</h3>
+                <h1 class="heading italic">Ramya</h1>
+                <p style="margin-top: 20px; line-height: 1;">Join us as we celebrate our love at our wedding <br>
+                    reception! The fun begins right now! Come join us in celebrating our special day.</p>
+                <h1 style="margin-top: 20px;">25 | NOV | 2024</h1>
+            </div>
+        </div>
+    </div>
+    <div class="border"></div>
+
+    <div class="image">
+        <h1 style="font-size: 1rem; font-weight: 500; text-align: center;">Grand Parents yashashwini request the honour
+            of your <br>presence at the </h1>
+        <h1 class="heading italic">Wedding</h1>
+        <h1 style="font-size: 1rem; font-weight: 500; text-align: center;">Of our daughter.</h1>
+        <h1 class="heading italic">Don't Forgot Gift</h1>
+    </div>
+    <div class="border"></div>
+
+    <!-- <div class="tree"></div> -->
+
+    <div class="scan">
+        <div class="qr-left">
+            <img src="https://i.pinimg.com/736x/a9/53/7c/a9537c918aa704613299280c6cf3b12a.jpg" alt="">
+        </div>
+        <div class="qr-right">
+            <h1 class="italic" style="color: #004234;">
+                Our grins will only get wider and our giggles bigger with our friends on our side as we take the plunge!
+                Celebrate our big day with us. Brunch: The socially acceptable excuse for day drinking. The dress code
+                is very simple—just keep your clothes on! Please be dressed in ALL WHITE! Sangeet: Now get out there and
+                shake what your mamma gave you! Wedding: That moment when you realize it’s too late to run!
+            </h1>
+            <button>Pay and leave</button>
+        </div>
+    </div>
+
+    <div class="address">
+        <h1 class="italic">Venue</h1> <br>
+        <h2 class="italic" style="text-align: center;">8th Main Rd, BEML Layout, Basaveshwar Nagar, <br> Bengaluru,
+            Karnataka 560079</h1>
+            <br>
+            <h4 class="italic">On</h1>
+                <h1>25 | NOV | 2024</h1>
+    </div>
+
+    <div class="thanks">
+        <div class="left">
+            <h1 class="italic" style="font-size: 5rem; color: #004234;">Thank you...</h1>
+            <h1 class="italic" style="font-size: 4rem; color: rgb(199, 17, 59);">I Hope you will come</h1>
+            <h1 class="italic" style="font-size: 3rem; color: #6d2ed4;">Plese come with gifts</h1>
+            <h1>or</h1>
+            <h1 class="italic" style="font-size: 3rem; color: #6d2ed4;"> visit to our website to scan and pay</h1>
+            <button>Pay and leave</button>
+        </div>
+        <div class="right">
+            <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-cute-indian-wedding-couple-cartoon-png-image_13388419.png"
+                alt="">
+        </div>
+    </div>
+    <footer style="background-color: #0c0c0c; color: #fff; padding: 30px; text-align: center;">
+        <p>&copy; copyrights@2024. All rights reservced</p>
+    </footer>
+</body>
+
+</html>

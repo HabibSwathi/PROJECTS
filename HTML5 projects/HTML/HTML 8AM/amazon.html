@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"   />
+    <style>
+        /* Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #232F3E;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 90px;
+            object-fit: cover;
+        }
+
+        .location h2 {
+            font-size: 1rem;
+        }
+
+        .location p {
+            color: #dcdada;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .search-container select,
+        .search-container input {
+            padding: 7px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .search-container input {
+            width: 100%;
+        }
+
+        .search-container button {
+            background-color: #FF9900;
+            border: none;
+            padding: 7px 15px;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .category {
+            background-color: #232F3E;
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .category_links {
+            display: flex;
+            align-items: center;
+        }
+
+        .category_links a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px;
+            gap: 2px;
+        }
+
+        .category_links a:hover {
+            border: 2px solid #dcdada;
+        }
+
+        .cat_img img {
+            height: 40px;
+        }
+
+        .homepage {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-bottom: 2px solid #ddd;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .extra-options {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            padding-top: 55px;
+        }
+
+        .menu ul li {
+            margin-right: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+            border-bottom: 3px solid #000;
+        }
+
+        .follow-btn {
+            background-color: white;
+            color: #333;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .follow-btn:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        .search-bar {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 250px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .img-productcontainer {
+            width: 60%;
+            padding: 10px;
+        }
+
+        .img-productcontainer img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .img-productgrid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 40%;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .img-product,
+        .img-product1 {
+            position: relative;
+            width: 50%;
+            margin-bottom: 15px;
+        }
+
+        .img-product img {
+            width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-product1 img {
+            width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-product:hover img {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .img-product:hover .overlay {
+            opacity: 1;
+        }
+
+        .see-products {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .fashion-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .fashion-item {
+            position: relative;
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        .fashion-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .fashion-text {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color: black;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px white;
+        }
+
+        .bottoms-image {
+            display: flex;
+            background-color: rgb(170, 168, 168);
+        }
+
+        .bottoms-image img {
+            margin: auto;
+        }
+
+        .recommend {
+            text-align: center;
+
+        }
+
+        .recommend h1 {
+            font-size: 35px;
+            padding: 20px 20px;
+        }
+
+        .recommend h2 {
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        .recommend img {
+            margin: 5px 0px;
+            height: 600px;
+        }
+
+        .recommend button {
+            border: none;
+            font-size: 20px;
+            padding: 10px 100px;
+            margin-top: 60px;
+            box-shadow: 3px 3px 15px rgb(0, 0, 0);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .recommend button:hover {
+            background-color: rgb(146, 145, 145);
+        }
+
+        .recommend h3 {
+            font-weight: 100;
+        }
+
+        footer {
+            background-color: #232F3E;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .content ul li a {
+            text-decoration: none;
+            color: #ffffff;
+
+        }
+
+        .content ul {
+            list-style-type: none;
+        }
+
+        footer h4 {
+            color: #ffffff;
+        }
+
+        .content ul li a:hover {
+            text-decoration: underline 1px #ffffff;
+        }
+
+        .end {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+
+        }
+
+        .end p {
+            color: #ffffff;
+        }
+
+        .bar {
+            background-color: #273648;
+            width: 100%;
+            height: 40px;
+
+        }
+
+        .bar h3 a {
+            text-decoration: none;
+            padding: 10px;
+            color: #ffffff;
+
+        }
+
+        .bar h3 {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png" alt="Logo">
+            </div>
+            <div class="location">
+                <p>Deliver to Swathi</p>
+                <h2><i class="fa-solid fa-location-dot"></i> Bangalore - 560023</h2>
+            </div>
+            <div class="search-container">
+                <select>
+                    <option value="all">All</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="books">Books</option>
+                </select>
+                <input type="text" placeholder="Search Amazon.in">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="#">EN<i class="fa-solid fa-caret-down"></i></a>
+
+            </div>
+        </div>
+    </header>
+    <hr>
+
+    <div class="category">
+        <div class="category_links">
+            <a href="#"><i class="fa-solid fa-bars"></i>All</a>
+            <a href="#">Fresh<i class="fa-solid fa-caret-down"></i></a>
+            <a href="Electronics">Electronics</a>
+            <a href="MX Player">MX Player</a>
+            <a href="Sell">Sell</a>
+            <a href="Gift Card">Gift Card</a>
+            <a href="Amazon Pay">Amazon Pay</a>
+            <a href="Buy Again">Buy Again</a>
+            <a href="AmazonBasics">AmazonBasics</a>
+            <a href="Gift Ideas">Gift Ideas</a>
+            <a href="Today's Deals">Today's Deals</a>
+        </div>
+        <div class="cat_img">
+            <img src="https://m.media-amazon.com/images/G/31/Events/img24/Jupiter24/HERO1/J24_SWM_Shopnow._CB562557233_.jpg"
+                alt="">
+        </div>
+    </div>
+
+    <img src="https://m.media-amazon.com/images/S/stores-img-productuploads-eu-prod/2/AmazonStores/A21TJRUUN4KGV/75c21f56e3127a7b0b1d17f630252fb2.w3000.h600._CR0%2C0%2C3000%2C600_SX1920_.jpg"
+        alt="" width="100%">
+
+    <div class="homepage">
+        <div class="logo" style="display: flex; padding: 10px;">
+            <img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/9c78e5ef-6eac-4c4e-9482-5c516d15865a._CR0%2C0%2C749%2C750_SX200_.PNG"
+                alt="" width="100px">
+            <div class="extra-options">
+                <p>Home Page</p><br>
+                <button class="follow-btn">+ Follow</button>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ALL DEALS</a></li>
+                    <li><a href="#">TOPS</a></li>
+                    <li><a href="#">DRESSES</a></li>
+                    <li><a href="#">BOTTOMS</a></li>
+                    <li><a href="#">WINTER</a></li>
+                    <li><a href="#">BASICS</a></li>
+                </ul>
+            </nav>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search all Home Page">
+    </div>
+
+    <div class="gallery">
+        <div class="img-productcontainer">
+            <img src="https://m.media-amazon.com/images/I/61EOd4xsknL._SX679_.jpg" alt="Main Product">
+        </div>
+        <div class="img-productgrid">
+            <div class="img-product1">
+                <img src="https://m.media-amazon.com/images/I/7144EmMHYyL._SX679_.jpg" alt="Product 1">
+                <div class="overlay">
+                    <p class="see-products">See Product</p>
+                </div>
+            </div>
+            <div class="img-product">
+                <img src="https://m.media-amazon.com/images/I/613CG-p0RzL._SY741_.jpg" alt="Product 2">
+                <div class="overlay">
+                    <p class="see-products">See Product</p>
+                </div>
+            </div>
+            <div class="img-product">
+                <img src="https://m.media-amazon.com/images/I/61OE0YwS2pL._SY741_.jpg" alt="Product 3">
+                <div class="overlay">
+                    <p class="see-products">See Product</p>
+                </div>
+            </div>
+            <div class="img-product1">
+                <img src="https://m.media-amazon.com/images/I/51o5lkOPc3L._SX679_.jpg" alt="Product 4">
+                <div class="overlay">
+                    <p class="see-products">See Product</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="recommend">
+        <h2 style="font-weight:100;">Featured Deals</h2>
+        <p>Sorry, there are currently no available deals.</p>
+
+        <h1>Recommended for You</h1>
+        <img src="https://m.media-amazon.com/images/I/51ejIFXMOcL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/616jhtvi7tL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/614HstznsIL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="	https://m.media-amazon.com/images/I/81qGq0ocvPL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt=""
+            width="205" height=400">
+        <img src="https://m.media-amazon.com/images/I/6115Kf5IG7L.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/81wqD12RieL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71-sMHPhmzL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+
+        <h1>Best Sellers from Home Page</h1>
+        <img src="https://m.media-amazon.com/images/I/61eHWRyP6AL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/61L4fkWALhL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71qs3hHvSEL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71pz6OtSOoL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71pSHjmMFaL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/61iLGEonFzL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71t3fo1++FL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+
+        <button><i class="fa-solid fa-download"></i>Share</button>
+        <h3>Share this page with your friends.</h3>
+
+
+    </section>
+
+    <div class="bar">
+        <h3><a href="#Home">back to top</a></h3>
+    </div>
+
+
+    <footer>
+
+
+        <div class="copyright">
+            <div class="content">
+                <div>
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Amazon Cares</a></li>
+                        <li><a href="#">Gift a Smile</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect with Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li><a href="#">Sell on Amazon</a></li>
+                        <li><a href="#">Amazon Associates</a></li>
+                        <li><a href="#">Become an Affiliate</a></li>
+                        <li><a href="#">Advertise Your Products</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns & Replacements</a></li>
+                        <li><a href="#">Shipping Rates & Policies</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="end">
+            <p>&copy; 2024 Amazon.com, Inc. or its affiliates</p>
+        </div>
+    </footer>
+
+</body>
+
+
+
+
+
+
+
+</html>

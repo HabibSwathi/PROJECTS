@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"   />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .card {
+            width: 500px;
+            min-height: 900px;
+            border: 1px solid #ccc;
+            margin: auto;
+            display: flex;
+            box-shadow: 3px 0px 10px #ccc;
+        }
+
+        .left {
+            width: 150px;
+            background-color: #163853;
+            color: #fff;
+
+        }
+
+        .left img {
+            border-radius: 100px;
+            border: 5px solid #fff;
+            margin-top: 15px;
+            margin-left: 25px;
+        }
+
+        .left h5 {
+            letter-spacing: 2px;
+            margin-left: 10px;
+            margin-top: 9px;
+            padding: 2px;
+        }
+
+        .left p {
+            font-size: 10px;
+            margin-left: 10px;
+            margin-top: 4px;
+        }
+
+        .right {
+            flex: 1;
+        }
+
+        .divider {
+            width: 90%;
+            border: 1px solid #fff;
+            margin-left: 8px;
+        }
+
+        .divide {
+            width: 20%;
+            border: 1px solid #000000;
+            margin-left: 50px;
+        }
+
+        .divid {
+            width: 80%;
+            border: 1px solid #000000;
+            margin-left: 30px;
+        }
+
+        dl {
+            font-size: 13px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        ul li {
+            font-size: 10px;
+            margin-top: 5px;
+
+        }
+
+        .right h1 {
+            margin-top: 45px;
+            margin-left: 50px;
+
+        }
+
+        .right h3 {
+            margin-top: 5px;
+            margin-left: 50px;
+        }
+
+        .work {
+            /* padding: 0px 20px; */
+            border-left: 2px solid #272626;
+            margin-left: 10px;
+            width: 100%;
+            margin-top: 10px;
+
+
+        }
+
+        .work dl {
+            padding: 0px 10px;
+            color: rgb(40, 40, 40);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            position: relative;
+
+        }
+
+        .work dl dd ul {
+            margin-left: 30px;
+            text-align: justify;
+            /* padding: 10px; */
+            margin-right: 20px;
+        }
+
+        .work dl:before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #101010;
+            border-radius: 100px;
+            position: absolute;
+            left: -15px;
+            top: 10px;
+        }
+
+        .work dt {
+            font-weight: 600;
+        }
+
+        .profile .heading,
+        .work .heading {
+            text-align: left;
+            margin-left: 30px;
+            font-size: 15px;
+            margin-top: 50px;
+        }
+
+        .profile p {
+            font-size: 10px;
+            font-family: sans-serif;
+            font-weight: 100;
+            padding: 5px 15px;
+            margin-left: 20px;
+            text-align: justify;
+
+        }
+
+        .referer {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+
+        .referer h5,
+        p {
+            font-size: 10px;
+            font-weight: 200;
+
+        }
+
+        .referer p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="card">
+            <div class="left">
+                <img src="https://th.bing.com/th/id/OIP.pCKKesqFkHTaeN1sJbR_JAHaHa?w=197&h=197&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                    alt="profile.." width="100" height="100">
+
+                <h5>CONATCT</h5>
+                <div class="divider"></div>
+                <p><i class="fa-solid fa-phone"></i> +123-4567-897</p>
+                <p><i class="fa-regular fa-envelope"></i> rich@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Banglore</p>
+                <p><i class="fa-solid fa-globe"></i> www.reallygeatsite.com</p>
+
+                <h5>EDUCATION</h5>
+                <div class="divider"></div>
+                <dl>2021 - 2024</dl>
+                <dt>
+                    <p>wardiere university</p>
+                    <ul>
+                        <li>Master of Business Management</li>
+                    </ul>
+                </dt>
+
+                <dl>2018 - 2020</dl>
+                <dt>
+                    <p>Hardward university</p>
+                    <ul>
+                        <li>Bachelor of Business Management</li>
+                        <li>CGPA :8.56</li>
+                    </ul>
+                </dt>
+
+                <h5>SKILLS</h5>
+                <div class="divider"></div>
+
+                <ul>
+                    <li>Project Management</li>
+                    <li>Team work</li>
+                    <li>communication </li>
+                    <li>Leadership</li>
+                    <li>Public relations</li>
+                </ul>
+
+                <h5>LANGUAGES</h5>
+                <div class="divider"></div>
+
+                <ul>
+                    <li>English(fluent)</li>
+                    <li>Kannada(fluent)</li>
+                    <li>Hindi(Basic)</li>
+
+                </ul>
+
+
+
+            </div>
+            <div class="right">
+                <h1><span style="color:rgb(48, 33, 5);font-weight: 700;">Richard</span> <span
+                        style="color:#163853; font-weight: 300;">sanchez</span></h1>
+                <h3 style="font-weight: 100;">Marketing Manager </h3>
+                <div class="divide"></div>
+
+                <div class="profile">
+                    <h3 class="heading">Profile</h3>
+                    <div class="divid"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita illum harum voluptatibus
+                        labore molestiae quos. Dolor, fugiat distinctio! Deleniti minima amet provident blanditiis
+                        eligendi consequatur eveniet ratione quis recusandae.</p>
+                </div>
+
+                <div class="work">
+                    <h3 class="heading">Work Experience</h3>
+                    <div class="divid"></div>
+                    <dl>
+                        <dt>Borcelle Studio</dt>
+                        <dd>
+                            <p>Marketing Manager & Specialist </p>
+                            <ul>
+                                <li>Develop and execute comprehensive marketing strategies and campaigns that align with
+                                    the company's goals and objectives.</li>
+                                <li>Lead, mentor, and manage a high-performing marketing team, fostering a collaborative
+                                    and results-driven work environment.</li>
+                                <li>Monitor brand consistency across marketing channels and materials.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Borcelle Studio</dt>
+                        <dd>
+                            <p>Marketing Manager & Specialist </p>
+                            <ul>
+                                <li>Develop and execute comprehensive marketing strategies and campaigns that align with
+                                    the company's goals and objectives.</li>
+                                <li>Lead, mentor, and manage a high-performing marketing team, fostering a collaborative
+                                    and results-driven work environment.</li>
+                                <li>Monitor brand consistency across marketing channels and materials.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Borcelle Studio</dt>
+                        <dd>
+                            <p>Marketing Manager & Specialist </p>
+                            <ul>
+                                <li>Develop and execute comprehensive marketing strategies and campaigns that align with
+                                    the company's goals and objectives.</li>
+                                <li>Lead, mentor, and manage a high-performing marketing team, fostering a collaborative
+                                    and results-driven work environment.</li>
+                                <li>Monitor brand consistency across marketing channels and materials.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="refer">
+                    <h3 class="heading">Reference</h3>
+                    <div class="divid"></div>
+                    <div class="referer">
+                        <div class="l1">
+                            <h5>Estelle Darcy</h5>
+                            <h5>Wardiere Inc. / CTO</h5>
+                            <p>Phone : 123-4567-896 <br>
+                                Email : hello@reallygreatsite.com</p>
+                        </div>
+                        <div class="r1">
+                            <h5>Harper Richard</h5>
+                            <h5>Wardiere Inc. / CEO</h5>
+                            <p>Phone : 123-4567-896 <br>
+                                Email : hello@reallygreatsite.com</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Background with diagonal lines */
+        .background {
+            display: flex;
+            background: url('https://static.vecteezy.com/system/resources/previews/012/833/282/original/modern-black-texture-background-free-vector.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            padding: 50px;
+        }
+
+        /* "OVERFLOW" Text at the Top */
+        .overflow-title {
+            position: absolute;
+            top: 70px;
+            left: 80px;
+            font-size: 24px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        /* Navigation Menu */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 60px 200px;
+            position: absolute;
+            width: 100%;
+        }
+
+        nav a {
+            margin-left: 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Large Heading Text */
+        .hero-text {
+            position: absolute;
+            top: 40%;
+            left: 130px;
+            max-width: 800px;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            line-height: 1.2;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Call-to-action button */
+        .cta-button {
+            display: inline-block;
+            background-color: #ffc107;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #ffca2c;
+        }
+
+        /* Vertical Social Links */
+        .social-links {
+            position: absolute;
+            right: 150px;
+            top: 50%;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .social-links a {
+            display: block;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            left: 50px;
+            bottom: 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .services-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .service-box {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 70px;
+            margin-right: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box h3 {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .service-box p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .service-box:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        @media (max-width: 1000px) {
+            .service-box {
+                width: 45%;
+                margin-right: 5%;
+            }
+
+            .service-box:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-box {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        /* "Let's discuss your idea" section */
+        .idea-section {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 90px;
+            width: 100%;
+            border-radius: 10px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .idea-section .greeting {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .idea-section h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .idea-section .description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .idea-section .button {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .idea-section .button:hover {
+            background-color: #333;
+        }
+
+        .left {
+            flex: 1;
+        }
+
+        .right {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background">
+        <header>
+            <div class="overflow-title">OVERFLOW</div>
+            <nav>
+                <a href="#">Works</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Hero Text -->
+        <div class="hero-text">
+            <h1>Turning ideas<br>into websites</h1>
+            <a href="#" class="cta-button">Explore Our Works</a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <!-- <div class="scroll-indicator">
+            Scroll
+        </div> -->
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="service-box">
+            <h3>Webflow Powered</h3>
+            <p>Webflow allows us to use a wide range of functionalities to create awesome projects.</p>
+        </div>
+        <div class="service-box">
+            <h3>Web Animations</h3>
+            <p>We are ready to embody any flight of your imagination with smooth web animations.</p>
+        </div>
+        <div class="service-box">
+            <h3>Flexible Pricing</h3>
+            <p>Pay for what you need. We offer reasonable pricing based on your demand.</p>
+        </div>
+        <div class="service-box">
+            <h3>Ongoing Support</h3>
+            <p>We love our clients and what they do; therefore, we will be ready to help anytime.</p>
+        </div>
+        <div class="service-box">
+            <h3>CMS Functionality</h3>
+            <p>Managing your blog will be as easy as sending a message in WhatsApp.</p>
+        </div>
+        <div class="service-box">
+            <h3>Quickly And Efficiently</h3>
+            <p>We value your time and try to deliver the work in the shortest possible time.</p>
+        </div>
+    </section>
+
+    <!-- "Let's discuss your idea" Section -->
+    <section class="idea-section">
+        <div class="left">
+            <p class="greeting">— hey, buddy</p>
+        </div>
+        <div class="right">
+            <h1>Let's discuss your idea</h1>
+            <p class="description">
+                Got an idea of an amazing project or want to experiment with your curiosity?
+                We’d be happy to talk to you and collaborate on the projects that will help
+                you and your clients make big things. Don’t wait, click the button below.
+            </p>
+            <a href="#" class="button">Message Us</a>
+        </div>
+    </section>
+
+</body>
+
+</html>

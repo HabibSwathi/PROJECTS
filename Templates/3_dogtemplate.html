@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vet Clinic - True Friend</title>
+    <style>
+        /* Resetting some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            height: 100vh;
+            /* overflow: hidden; */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://i0.wp.com/dogminancia.com/wp-content/uploads/2017/11/223945f8-5216-4393-95b5-960ec3115f96.jpeg?resize=700%2C497&ssl=1');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #000;
+        }
+
+        .text-overlay h3 {
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .text-overlay h1 {
+            font-size: 64px;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            padding: 50px;
+            margin: auto;
+        }
+
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            /* border-radius: 8px; */
+        }
+
+        /* Styles for each specific block */
+        .grid-item-black {
+            background-color: #000;
+            color: #fff;
+            position: relative;
+        }
+
+        .grid-item-black h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .grid-item-black::after {
+            content: '➔';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 300px;
+            /* border-radius: 8px; */
+            object-fit: cover;
+        }
+
+        .grid-item-text {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .grid-item-text p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .icon-heart::before {
+            content: '♡';
+        }
+
+        .icon-dog::before {
+            content: '🐶';
+        }
+
+        .icon-cat::before {
+            content: '🐱';
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: url('https://pbs.twimg.com/media/GBcwwzaWAAAt2mQ.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Text overlay content */
+        .text-overlay {
+            text-align: center;
+        }
+
+        .text-overlay h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .text-overlay p {
+            font-size: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .text-overlay h1 {
+                font-size: 32px;
+            }
+
+            .text-overlay p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-overlay">
+            <h3>VET CLINIC</h3>
+            <h1 style="color: #000;">True Friend</h1>
+        </div>
+
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item grid-item-black">
+            <h2>Clean It Right 'Round The Pets</h2>
+        </div>
+        <div class="grid-item grid-item-text">
+            <div class="icon icon-heart"></div>
+            <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua.</p>
+        </div>
+        <div class="grid-item">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT99BXi78sX6tD2oE_L6K1EySIRVahOotowDsQ2Na6Esg73Pj2z"
+                alt="Man with dog">
+        </div>
+        <div class="grid-item grid-item-text">
+            <div class="icon icon-dog"></div>
+            <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua.</p>
+        </div>
+        <div class="grid-item">
+            <img src="https://static.wixstatic.com/media/07032d_3911972ab2914529ba23ffb6d5711b8d~mv2.webp"
+                alt="Happy dog">
+        </div>
+        <div class="grid-item grid-item-text">
+            <div class="icon icon-cat"></div>
+            <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="text-overlay">
+            <h1>Cat Stories, News, Tips & Tricks</h1>
+            <p>Tips for life with cats</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"   />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        #contact-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 150px;
+            background-color: #fff;
+
+        }
+
+        #contact-text {
+            flex: 2;
+            padding-right: 20px;
+            justify-content: center;
+        }
+
+        #contact-text h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 58px;
+            color: #333;
+        }
+
+        #phone-number {
+            color: #e3ef04;
+            font-size: 55px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #phone-number i {
+            color: #e3ef04;
+        }
+
+        #contact-image {
+            flex: 1;
+        }
+
+        #contact-image img {
+            max-width: 100%;
+            max-height: 700px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        #services {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+
+        .service {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service h2 {
+            color: #e3ef04;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        #partners {
+            background-color: #000;
+            padding: 50px 0;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        #partners img {
+            max-width: 150px;
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+
+        #support-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            text-align: center;
+            background-color: #fff;
+            height: 300px;
+        }
+
+        #support-form p {
+            text-align: left;
+            width: 300px;
+            margin: 0;
+        }
+
+        #support-form input[type="text"],
+        #support-form input[type="email"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            box-shadow: 0 0 8px rgba(227, 239, 4, 0.5);
+            background-color: #fff;
+        }
+
+        #support-form button {
+            border: none;
+        }
+
+        #support-form button:hover {
+            background-color: #575757;
+        }
+
+        #button {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #333;
+            color: #ffffff;
+            border-radius: 10px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="contact-section">
+        <div id="contact-text">
+            <h1>Sample Best IT- <br>Solutions Company <br>Near The World</h1>
+            <p style="color: #868686; font-size: 1.3rem;">Sample text. Click to select the text box. Click again or <br>
+                double
+                click to start editing the text.</p>
+            <p id="phone-number"><i class="fa-solid fa-phone"></i> +1 (234) 567-8910</p>
+        </div>
+        <div id="contact-image">
+            <img src="https://assets.nicepagecdn.com/11a8ddce/1522145/images/pexels-photo-1030895.png"
+                alt="Sample Image">
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="service" id="call-us">
+            <h2>01</h2>
+            <p>Call Us</p>
+            <p>1 (234) 567-891</p>
+            <p>1 (234) 987-654</p>
+        </div>
+        <div class="service" id="location">
+            <h2>02</h2>
+            <p>Location</p>
+            <p>121 Rock Street, 21 Avenue, New York, NY 92103-9000</p>
+        </div>
+        <div class="service" id="top-services">
+            <h2>03</h2>
+            <p>Our Top Services</p>
+            <p>Self-Studying</p>
+            <p>Online Courses</p>
+            <p>Challenge Yourself</p>
+        </div>
+    </section>
+
+    <section id="partners">
+        <img src="https://assets.nicepagecdn.com/11a8ddce/1522145/images/logo-amazon.svg" alt="CROLLA">
+        <img src="https://assets.nicepagecdn.com/11a8ddce/1522145/images/1.svg" alt="Binance">
+        <img src="https://assets.nicepagecdn.com/11a8ddce/1522145/images/evga.svg" alt="EVGA">
+        <img src="https://assets.nicepagecdn.com/11a8ddce/1522145/images/tesla-9.svg" alt="Tesla">
+    </section>
+
+    <section id="support-form">
+        <h2>We're Here To Support</h2>
+        <p>Name</p>
+        <input type="text" id="name" name="name" placeholder="Enter your Name">
+        <p>Email</p>
+        <input type="email" id="email" name="email" placeholder="Enter a valid email address">
+        <p>Message</p>
+        <input type="text" id="Message" name="Message" placeholder="Enter your Message">
+        <button type="submit" id="button">Submit</button>
+    </section>
+
+</body>
+
+</html>

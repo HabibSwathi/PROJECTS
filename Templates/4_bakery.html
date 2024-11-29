@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Catalog</title>
+    <style>
+        /* Container and layout styling */
+        .catalog-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background-color: #FF8500;
+            /* Orange background */
+            padding: 20px;
+        }
+
+        /* Image container styling */
+        .catalog-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Image styling */
+        .catalog-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for image */
+        .catalog-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Text overlay styling */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            /* Semi-transparent black overlay */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Show text on hover */
+        .catalog-item:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="catalog-container">
+        <div class="catalog-item">
+            <img src="bread1.jpg" alt="Bread 1">
+            <div class="overlay">Sourdough Bread</div>
+        </div>
+        <div class="catalog-item">
+            <img src="bread2.jpg" alt="Bread 2">
+            <div class="overlay">Brioche Twist</div>
+        </div>
+        <div class="catalog-item">
+            <img src="bread3.jpg" alt="Bread 3">
+            <div class="overlay">French Baguette</div>
+        </div>
+        <div class="catalog-item">
+            <img src="bread4.jpg" alt="Bread 4">
+            <div class="overlay">Rye Bread</div>
+        </div>
+        <div class="catalog-item">
+            <img src="bread5.jpg" alt="Bread 5">
+            <div class="overlay">Seeded Loaf</div>
+        </div>
+        <div class="catalog-item">
+            <img src="bread6.jpg" alt="Bread 6">
+            <div class="overlay">Artisan Rolls</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

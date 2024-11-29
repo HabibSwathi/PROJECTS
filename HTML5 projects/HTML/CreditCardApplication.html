@@ -1,0 +1,234 @@
+<html>
+    <head>
+        <title>banking form</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        section{
+            min-height: 100vh;
+            background-color: rgb(255, 0, 21);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        form{
+            width: 70%;
+            background-color: #fff;
+            padding: 30px;
+        }
+        span{
+            color: red;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="date"], select, input[type="tel"],input[type="email"]{
+            padding: 8px;
+            border: none;
+            outline: none;
+            border: 1px solid #ccc;
+            width: 300px;
+
+        }
+        input[type="text"]:focus{
+            box-shadow: 0px 0px 3px rgba(255, 0, 21, 0.733);
+            border: 1px solid rgb(255, 0, 21);
+        }
+
+        button[type="button"]{
+            padding: 10px;
+            width: 150px;
+            background-color: transparent;
+            border: none;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+        button[type="button"]:hover{
+            background-color: #cccccc59;
+        }
+        .btns{
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: end;
+            padding: 10px;
+        }
+
+        button[type="submit"]{
+            border: none;
+            width: 150px;
+            border-radius: 10px;
+            background-color: rgb(229, 221, 221);
+            color: #fff;
+            padding: 10px;
+        }
+        button[type="submit"]:hover{
+            background-color: rgb(249, 13, 32)  !important;
+        }
+        button{
+            cursor: pointer;
+        }
+        h1{
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+
+</style>
+    </head>
+    <body>
+        <section>
+            <form>
+                <center>
+                    <h1>Credit Card Application Form</h1>
+                </center>
+
+                <h4>personal info</h4>
+                <label for="">title<span>*</span></label>
+                <div style="display: flex;gap: 50px;">
+                    <label for=""><input type="radio">Mr.</label>
+                    <label for=""><input type="radio">Mrs.</label>
+                    <label for=""><input type="radio">Miss.</label>
+                    <label for=""><input type="radio">Dr.</label>
+                    <label for=""><input type="radio">others.</label>
+                </div>
+                <label for="">full name<span>*</span></label>
+                <div style="display: flex;gap: 30px;">
+                    <div>
+                        <input type="text">
+                        <label for="" style="margin-top: 2px;">Firstname</label>
+                    </div>
+                    <div>
+                        <input type="text">
+                        <label for="" style="margin-top: 2px;">Lastname</label>
+                    </div>
+                </div>
+                <br>
+
+                <label for="">Gender <span>*</span></label>
+                <label for=""><input type="radio" name="" id="">Male</label>
+                <label for=""><input type="radio" name="" id="">female</label>
+                <br>
+                <label for="">Mother's maiden name <span>*</span></label>
+                <input type="text"><br>
+
+                <br>
+                <label for="">occupation<span>*</span></label>
+                <input type="text"><br>
+
+                <br>
+                <label for="education">highest education<span>*</span></label>
+                <select name="education" id="education">
+                    <option value="">Please select</option>
+                    <option value="">university</option>
+                    <option value="">college</option>
+                    <option value="">secondary</option>
+                    <option value="">primary</option>
+                    <option value="">others</option>
+                    <option value="">not available</option>
+                </select>
+
+                <br>
+                <label for="">Telephone<span>*</span></label>
+                <input type="tel" min="10" max="13"><br><br>
+                
+                <br>
+                <label for="">Telephone(work)<span>*</span></label>
+                <input type="tel" min="10" max="13"><br><br>
+                
+                <br>
+                <label for="">email<span>*</span></label>
+                <input type="email" id="email" name="emailaddress" ><br><br>
+
+                <br>
+                <label for="">Martial Status<span>*</span></label>
+                <label for=""><input type="radio"> single</label>
+                <label for=""><input type="radio"> Married</label>
+                <label for=""><input type="radio"> Divorced</label>
+                <label for=""><input type="radio"> Widow(er)</label>
+
+                <br>
+                <label for="">Passport/National ID</label>
+                <input type="text"><br>
+
+                <br>
+                <label for="">Address<span>*</span></label>
+                <input type="text"><br>
+                <small>street address</small><br/>
+
+                <div style="display: flex;gap: 30px;">
+                    <div>
+                        <input type="text"><br>
+                        <small>city</small> 
+                    </div>
+                    <div>
+                        <input type="text"><br>
+                        <small>state</small>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 30px;">
+                    <div>
+                        <input type="text"><br>
+                        <small>zip code</small> 
+                    </div>
+                    <div>
+                        <select name="country" id="country">
+                            <option value="">Please select</option>
+                            <option value="">Africa</option>
+                            <option value="">Bhutan</option>
+                            <option value="">India</option>
+                            <option value="">poland</option>
+                            <option value="">srilanka</option>
+                            <option value="">others</option>
+                        </select>
+                        <small>country</small>
+                    </div>
+                </div>
+
+                <br>
+                <label for="">Financial Information</label>
+                <br>
+                <br/>
+                <label for="">Are you a<span>*</span></label>
+                <label for=""><input type="radio"> Homeowner</label>
+                <label for=""><input type="radio"> Renter</label>
+                <label for=""><input type="radio"> Other</label>
+                <br/>
+
+                <label for="">Gross Monthly Income<span>*</span></label>
+                <input type="text" placeholder="$"><br>
+
+                <br/>
+
+                <label for="">Mortgage Payment Monthly<span>*</span></label>
+                <input type="text" placeholder="$"><br>
+
+                <label for="">Would you like to insure your credit caed(s)?</label>
+                <label for=""><input type="radio"> Yes</label>
+                <label for=""><input type="radio"> No</label><br>
+
+                <label for="">Date<span>*</span></label>
+                <input type="date"><br>
+                <small>date</small><br/><br/>
+                
+                
+                <p><b>Declaration</b></p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa explicabo iusto et magni beatae nisi id vel sit perspiciatis, maiores nobis laudantium laboriosam nam, illo sunt. Eum doloremque eligendi </p>
+
+                <div class="btns">
+                    <button type="button">print form</button>
+                    <button type="submit">submit</button>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

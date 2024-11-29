@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower - Wikipedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        header .logo p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        header .search input {
+            padding: 7px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        header .search button {
+            padding: 7px 12px;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        header .search button:hover {
+            background-color: #005bb5;
+        }
+
+        .breadcrumb {
+            padding: 10px;
+            background-color: #f8f8f8;
+            font-size: 0.9em;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px auto;
+            max-width: 1500px;
+            gap: 20px;
+        }
+
+        .b1 {
+            text-transform: capitalize;
+        }
+
+        .b2 {
+            text-transform: lowercase;
+        }
+
+        .b3 {
+            text-transform: uppercase;
+        }
+
+        .b4 {
+            text-align: center;
+        }
+
+        .b5 {
+            text-align: right;
+        }
+
+        /*end*/
+        .b6 {
+            text-align: left;
+        }
+
+        /*start*/
+        .b7 {
+            text-align: justify;
+        }
+
+        .b8 {
+            text-indent: 300px;
+        }
+
+        .b9 {
+            text-decoration: underline;
+        }
+
+        .b10 {
+            text-decoration: line-through;
+        }
+
+        .b11 {
+            text-decoration: overline dotted red;
+            /*solid dahsed dotted double */
+        }
+
+        .b12 {
+            text-decoration: underline;
+            text-decoration-color: green;
+            text-decoration-style: solid;
+            /*solid dahsed dotted double*/
+            text-underline-offset: 20px;
+            /*it is used to provide space b/w the text and underline*/
+            line-height: 3;
+        }
+
+        .b13 {
+            text-emphasis: filled purple;
+        }
+
+        .b14 {
+            text-emphasis: '🌸'red;
+        }
+
+        .b15 {
+            /* text-emphasis: filled triangle;
+            text-emphasis-color: green; */
+            text-emphasis: filled triangle rgb(107, 107, 182);
+            /*shortand property*/
+        }
+
+        .b16 {
+            text-emphasis: filled double-circle beige;
+            /*shortand property*/
+        }
+
+        .b17 {
+            text-emphasis: filled sesame teal;
+            /*shortand property*/
+            /* text-emphasis: filled;
+            text-emphasis-color: green;
+            text-emphasis-style: triangle; */
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #0078d7;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: flex;
+            flex: 3;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-left: 30px;
+        }
+
+        .content h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
+
+        .content p {
+            margin: 20px;
+        }
+
+        .image-gallery {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-gallery img {
+            width: 350px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 20px 0px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Wikipedia</h1>
+            <p>The Free Encyclopedia</p>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search Wikipedia">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <p>From Wikipedia, the free encyclopedia</p>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar with contents -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Etymology</a></li>
+                <li><a href="#">Morphology</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Function</a></li>
+                <li><a href="#">Pollination</a></li>
+                <li><a href="#">Fertilization</a></li>
+                <li><a href="#">Seed Development</a></li>
+                <li><a href="#">Fruit Development</a></li>
+                <li><a href="#">Seed Dispersal</a></li>
+                <li><a href="#">Evolution</a></li>
+                <li><a href="#">Colour</a></li>
+                <li><a href="#">Classical Taxonomy</a></li>
+                <li><a href="#">Symbols</a></li>
+                <li><a href="#">Human Use</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="left">
+                <h1>Flower</h1>
+                <p class="b1">A flower, also known as a bloom or blossom, is the reproductive structure found in
+                    flowering plants
+                    (plants of the division Angiospermae). Flowers consist of a combination of vegetative organs -
+                    sepals
+                    that enclose and protect the developing flower. These petals attract pollinators, and reproductive
+                    organs that produce gametophytes, which in flowering plants produce gametes...</p>
+
+                <p class="b2">Most flowering plants depend on animals, such as bees, moths, and butterflies, to transfer
+                    their pollen between different flowers, and have evolved to attract these pollinators by various
+                    strategies, including brightly colored, conspicuous petals, attractive scents, and the production of
+                    nectar, a food source for pollinators.[1] In this way, many flowering plants have co-evolved with
+                    pollinators to be mutually dependent on services they provide to one another—in the plant's case, a
+                    means of reproduction; in the pollinator's case, a source of food.</p>
+
+                <p class="b3">When pollen from the anther of a flower is deposited on the stigma, this is called
+                    pollination. Some flowers may self-pollinate, producing seed using pollen from a different flower of
+                    the same plant, but others have mechanisms to prevent self-pollination and rely on
+                    cross-pollination, when pollen is transferred from the anther of one flower to the stigma of another
+                    flower on a different individual of the same species.
+                </p>
+
+                <p class="b4"> Self-pollination happens in flowers where the
+                    stamen and carpel mature at the same time, and are positioned so that the pollen can land on the
+                    flower's stigma. This pollination does not require an investment from the plant to provide nectar
+                    and pollen as food for pollinators.[3] Some flowers produce diaspores without fertilization
+                    (parthenocarpy). After fertilization, the ovary of the flower develops into fruit containing seeds.
+                </p>
+
+                <p class="b5">Flowers have long been appreciated for their beauty and pleasant scents, and also hold
+                    cultural significance as religious, ritual, or symbolic objects, or sources of medicine and food.
+                </p>
+
+                <h2>Pollination</h2>
+                <p class="b6">Most flowering plants depend on animals, such as bees, moths, and butterflies, to
+                    transfer their pollen between different flowers, and have evolved to attract these pollinators by
+                    various strategies, including brightly colored, conspicuous petals, attractive scents, and the
+                    production of nectar...
+                </p>
+
+                <h2>Etymology</h2>
+                <p class="b7">Flower is from the Middle English flour, which referred to both the ground grain and the
+                    reproductive structure in plants, before splitting off in the 17th century. It comes originally from
+                    the Latin name of the Italian goddess of flowers, Flora. The early word for flower in English was
+                    blossom,[4] though it now refers to flowers only of fruit trees.[</p>
+
+                <h2>Morphology</h2>
+                <p class="b8">The morphology of a flower, or its form and structure,[6] can be considered in two parts:
+                    the vegetative part, consisting of non-reproductive structures such as petals; and the reproductive
+                    or sexual parts. A stereotypical flower is made up of four kinds of structures attached to the tip
+                    of a short stalk or axis, called a receptacle. [</p>
+
+                <p class="b9">Each of these parts or floral organs is arranged in a spiral called a whorl.[7] The four
+                    main whorls (starting from the base of the flower or lowest node and working upwards) are the calyx,
+                    corolla, androecium, and gynoecium. </p>
+
+                <p class="b10">Together the calyx and corolla make up the non-reproductive part of the flower called the
+                    perianth, and in some cases may not be differentiated. If this is the case, then they are described
+                    as tepals.</p>
+
+                <h2>Perianth</h2>
+                <p class="b11">The sepals, collectively called the calyx, are modified leaves that occur on the
+                    outermost whorl of the flower. They are leaf-like, in that they have a broad base, stomata and
+                    chlorophyll and may have stipules. </p>
+
+                <p class="b12">Sepals are often waxy and tough, and grow quickly to protect the flower as it develops.
+                </p>
+
+                <p class="b13">They may be deciduous, but will more commonly grow on to assist in fruit dispersal. If
+                    the calyx is
+                    fused it is called gamosepalous.</p>
+                <p class="b14">The petals, or corolla, are almost or completely fiberless leaf-like structures that form
+                    the innermost whorl of the perianth. </p>
+                <p class="b15">They are often delicate and thin and are usually colored, shaped, or scented to encourage
+                    pollination. </p>
+                <p class="b16">Although similar to leaves in shape, they are more comparable to stamens in that
+                    they form almost simultaneously with one another, but their subsequent growth is delayed. If the
+                    corolla is fused together it is called sympetalous</p>
+                <p class="b17">In general, there is only one type of stamen, but there are plant species where the
+                    flowers have two types; a "normal" one and one with anthers that produce sterile pollen meant to
+                    attract pollinators.[</p>
+            </div>
+            <div class="image-gallery">
+                <h2>Images</h2>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flower_poster_2.jpg/800px-Flower_poster_2.jpg"
+                    alt="Flower 1">
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

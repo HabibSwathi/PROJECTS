@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Scene</title>
+</head>
+
+<body>
+    <canvas id="canvas1" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas1');
+        const ctx = canvas.getContext('2d');
+
+        // Background color (sky)
+        ctx.fillStyle = '#F4E0C4';
+        ctx.fillRect(0, 0, 400, 400);
+
+        // Snow ground
+        ctx.fillStyle = '#F8F6EE';
+        ctx.fillRect(0, 250, 400, 150);
+
+        // Draw trees
+        function drawTree(x, y, size) {
+            ctx.fillStyle = 'green';
+            ctx.beginPath();
+            ctx.moveTo(x, y); // top point of the tree
+            ctx.lineTo(x - size, y + size * 2); // left bottom
+            ctx.lineTo(x + size, y + size * 2); // right bottom
+            ctx.closePath();
+            ctx.fill();
+
+            // Tree trunk
+            ctx.fillStyle = '#6B6B47';
+            ctx.fillRect(x - size / 6, y + size * 2, size / 3, size * 0.6);
+        }
+
+        // Tree positions and sizes
+        drawTree(100, 200, 30);
+        drawTree(200, 220, 20);
+        drawTree(300, 230, 25);
+        drawTree(250, 210, 40);
+
+        // Draw snowflakes
+        function drawSnowflake(x, y, radius) {
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+            ctx.fill();
+        }
+
+        // Random snowflakes
+        drawSnowflake(80, 50, 5);
+        drawSnowflake(150, 80, 3);
+        drawSnowflake(220, 60, 4);
+        drawSnowflake(300, 40, 5);
+        drawSnowflake(250, 90, 3);
+    </script>
+</body>
+
+</html>

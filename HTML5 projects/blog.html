@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #ff645a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .featured-post {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .featured-post img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .blog-posts article {
+            background-color: #fff;
+            padding: 20px;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-posts article img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Zomato Blog</h1>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <nav>
+                <ul>
+                    <li><a href="#">All Categories</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Technology</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="featured-post">
+        <img src="https://b.zmtcdn.com/data/file_assets/621862abf874a7c2be8fdd6d062ca67a1678705718.webp"
+            alt="Featured Post Image">
+    </section>
+
+    <section class="blog-posts">
+        <article>
+            <img style="height: fit-content; " src="https://zomatoblog.com/wp-content/uploads/2024/09/POS2.jpg"
+                alt="Post Image">
+            <small
+                style="color: grey; padding-top: 80px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Sumit
+                    Taneja</b> | September 10, 2024 | 2 min read</small>
+            <h2><b>Introducing POS Developer Platform: Simplifying integration with easy-to-use tools</b></h2>
+            <p>Read more about how Zomato is enabling restaurants to deliver best-in-class customer experience by
+                working with POS partners</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <img src="https://zomatoblog.com/wp-content/uploads/2024/08/fewweeks-before-event.png" alt="Post Image">
+            <small
+                style="color: grey; padding-top: 80px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Zeenah
+                    Vilcassim</b> | August 27, 2024 | 2 min read</small>
+            <h2><b>Book Now, Sell Anytime: Experience a seamless, secure and stress-free ticket booking experience</b>
+            </h2>
+            <p>Read more about our latest ‘Book Now, Sell Anytime’ feature aimed to enhance your ticket booking
+                experience.</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <img src="https://zomatoblog.com/wp-content/uploads/2024/08/Frame-7.png" alt="Post Image">
+            <small
+                style="color: grey; padding-top: 80px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Shuvra
+                    Saha</b>| August 14, 2024 | 3 min read</small>
+            <h2><b>
+                    Read more about how our restaurant partner, Samosa Party is transforming the ethnic snacking
+                    experience, one delicious samosa at a time.</b></h2>
+            <p>Read more about how our restaurant partner, Samosa Party is transforming the ethnic snacking experience,
+                one delicious samosa at a time.</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <img src="https://zomatoblog.com/wp-content/uploads/2024/08/Blog-15.jpg" alt="Post Image">
+            <small
+                style="color: grey; padding-top: 80px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>SRE
+                    Team</b> | August 12, 2024 | 11 min read</small>
+            <h2><b>Migrating to VictoriaMetrics: A Complete Overhaul for Enhanced Observability</b></h2>
+            <p>Discover how we migrated our observability metrics platform from Thanos and Prometheus to VictoriaMetrics
+                for cost reduction, enhanced reliability and scalability.</p>
+            <a href="#">Read More</a>
+        </article>
+    </section>
+
+    <footer>
+        <p>© 2024 Zomato Blog - All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>

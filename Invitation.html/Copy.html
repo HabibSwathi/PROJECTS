@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .font {
+            font-size: 38px;
+            letter-spacing: 6px;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        body {
+            line-height: 2.5;
+            background: radial-gradient(circle, #440000 40%, #2c0c0c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .invitation-card {
+            /* background-color: #440000; */
+            border-radius: 20px;
+            padding: 50px;
+            /* width: 80%; */
+            /* max-width: 700px; */
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        /* Kalash Icon Styling */
+        .kalash img {
+            width: 300px;
+            margin: 30px 0;
+        }
+
+        .groom,
+        .bride {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f0d28c;
+        }
+
+        .marriage-text {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            letter-spacing: 2px;
+        }
+
+        .venue {
+            font-size: 1rem;
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+
+        .corner {
+            position: fixed;
+            width: 250px;
+            height: 250px;
+            z-index: 10;
+            opacity: 0.8;
+        }
+
+        .top-left {
+            top: 10px;
+            left: 10px;
+            transform: rotate(90deg);
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(270deg);
+        }
+
+        p {
+            color: #f0d28c;
+            display: inline;
+        }
+
+        .parents h3 {
+            letter-spacing: 4px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .timing {
+            display: flex;
+            /* background-color: aquamarine; */
+        }
+
+        .time-left h2 {
+            color: #f0d28c;
+            font-size: 18px;
+        }
+
+        .time-right h2 {
+            font-size: 18px;
+        }
+
+        .time-left {
+            max-width: 400px;
+            width: 100%;
+            /* display: flex; */
+            justify-content: center;
+        }
+
+        .time-right {
+            max-width: 700px;
+            width: 100%;
+            /* background-color: black; */
+            /* display: flex; */
+            justify-content: right;
+            padding-right: 30px;
+            align-items: center;
+        }
+
+        .details-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        .details-table th {
+            padding: 10px 0;
+            border-bottom: 1px solid #fff;
+            text-align: left;
+            padding-left: 100px;
+        }
+
+        .details-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #fff;
+            text-align: right;
+            padding-right: 100px;
+        }
+
+        .compliments h3 {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            color: #f0d28c;
+        }
+
+        .compliments p {
+            margin-top: 5px;
+            color: #fff;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 50px;
+            /* margin: auto; */
+            padding-left: 150px;
+        }
+
+        /* Countdown block style */
+        .countdown-box {
+            width: 100px;
+            height: 100px;
+            background: url(https://i.pinimg.com/736x/0c/a0/cd/0ca0cd9929dace2ccd63c9be83bdb9c2.jpg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            color: #4b0000;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+        }
+
+        /* Spacing and font styles */
+        .countdown-box span {
+            font-size: 18px;
+        }
+
+        .header-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            color: #ffeec6;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: url(https://i.pinimg.com/736x/0c/a0/cd/0ca0cd9929dace2ccd63c9be83bdb9c2.jpg);
+            height: 70px;
+            width: 350px;
+            color: #4b0000;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Text content below buttons */
+        .content-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #f7d05e;
+            line-height: 1.6;
+        }
+
+        .content-text .contact {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Kannada text */
+        .kannada-text {
+            font-size: 18px;
+            color: #f7d05e;
+            margin-top: 20px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Footer text */
+        .footer-text {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #f7d05e;
+            text-align: center;
+        }
+
+        /* Contact link styling */
+        .footer-text a {
+            color: #960673;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .gold {
+            color: #f7d05e;
+        }
+
+        .image {
+            width: 100%;
+            background: url(https://i.pinimg.com/originals/7f/ac/08/7fac087e8a3b876d9c884e29c58d4ba1.gif) repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="image"></div> -->
+    <div class="invitation-card">
+
+        <header class="header">
+            || Sri Maddemma Devi Prasanna ||
+        </header>
+
+        <div class="content">
+            <h2 class="groom font">Chi. Ry. Somashekara Reddy R</h2>
+            <div class="kalash">
+                <img src="https://png.pngtree.com/png-vector/20240917/ourmid/pngtree-golden-kalash-green-leaf-and-coconut-on-the-top-png-image_13834370.png"
+                    alt="Kalash Icon">
+            </div>
+            <h2 class="bride font">Chi. Sou. Anusha T</h2>
+
+            <p class="marriage-text">ARE GETTING MARRIED</p><br>
+            <p class="venue">
+                <p>ON 27th NOVEMBER 2024, AT
+                    <strong style="display: inline; color: #fff;">SRI GAYATRI FUNCTION HALL</strong>
+                    Bagepalli Main Road, Cheluru Town, Chikkaballapur Dist.</p>
+            </p>
+
+            <div class="parents" style="margin-top: 180px;">
+                <h3>YOURS</h3>
+                <p>Smt. Late Maramma & Sri. Late Narayanappa</p><br>
+                <p>Smty. Bayyamma& Sri. Rodda Utthama Reddy</p>
+            </div>
+            <br>
+            <br><br>
+
+            <h2 class="groom font ">Muhurta Date & Time</h2>
+            <br>
+            <br>
+            <table class="details-table">
+                <tr>
+                    <th class="gold">Reception -</th>
+                    <td>Nov 16, 2024, 06:30 PM Onwards</td>
+                </tr>
+                <tr>
+                    <th class="gold">Muhurtham -</th>
+                    <td>Nov 17, 2024, 05:30 AM – 6:30 PM (Lagnam Thula)</td>
+                </tr>
+                <tr>
+                    <th class="gold">Hall -</th>
+                    <td>Sri Gayatri Function Hall</td>
+                </tr>
+                <tr>
+                    <th class="gold">Venue -</th>
+                    <td>Sri Gayatri Function Hall, Bagepalli Main Road, Cheluru Town, Chikkaballapur Dist.</td>
+                </tr>
+            </table>
+
+            <div class="compliments">
+                <h3 style="letter-spacing: 3px;">WITH BEST COMPLIMENTS FROM -</h3>
+                <p>Sri Dwarakanath Reddy M.L.A Thamallapalli.</p>
+                <p>Smt. Mamatha & Sri. T. Eshwara Reddy, Maragapalli.</p>
+                <p>Rodda Family, Thokalavari Family, Relatives & Friends.</p>
+            </div>
+
+            <div class="countdown">
+                <div class="countdown-box">
+                    <div>19</div>
+                    <span>Days</span>
+                </div>
+                <div class="countdown-box">
+                    <div>8</div>
+                    <span>Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <div>40</div>
+                    <span>Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <div>24</div>
+                    <span>Seconds</span>
+                </div>
+            </div>
+
+            <div class="header-text">Dinner & Dancing To Follow</div>
+
+            <a href="#" class="button">See the Venue</a><br>
+            <a href="#" class="button">Download Invitation</a>
+            <br>
+            <br>
+
+
+            <div class="content-text">
+                Can't wait to celebrate the auspicious moment of our family with you!<br>
+                Just a ping away for any queries:<br>
+                <span class="contact">+91 9845410792 and 8247743577</span>
+            </div>
+            <br>
+            <br>
+
+            <div class="kannada-text">
+                ಏರಡು ಹೃದಯಗಳು, ಒಂದು ಪ್ರೀತಿ, ಒಟ್ಟಿಗೆ ಜೀವನಸಾಗಣೆ. ನಾವು ನಮ್ಮ<br>
+                ಒಟ್ಟಿಗೆ ಇರುವ ಸೂಕ್ಷ್ಮಕ್ಷಣಗಳನ್ನು ಆಚರಿಸಲು ನಿಮಗೆ ಆಹ್ವಾನಿಸುತ್ತೇವೆ.<br>
+                ನಮ್ಮ ವಿಶೇಷ ದಿನದಂದು ನಮ್ಮೊಂದಿಗೆ ಸೇರಲು ನಾವು ನಿಮಗೆ ಆಹ್ವಾನಿಸುತ್ತೇವೆ.
+            </div>
+        </div>
+    </div>
+
+    <img src="https://png.pngtree.com/png-clipart/20221222/ourmid/pngtree-european-corner-decoration-simple-pattern-golden-texture-decoration-png-image_6533452.png"
+        alt="Top Left Corner" class="corner top-left">
+    <img src="https://png.pngtree.com/png-clipart/20221222/ourmid/pngtree-european-corner-decoration-simple-pattern-golden-texture-decoration-png-image_6533452.png"
+        alt="Bottom Right Corner" class="corner bottom-right">
+
+
+</body>
+
+</html>

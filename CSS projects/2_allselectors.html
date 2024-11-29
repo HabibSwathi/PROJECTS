@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors Template</title>
+    <style>
+        /* ID Selector */
+        #section1 {
+            background-color: lightblue;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        #section2 {
+            background-color: lightgreen;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        /* Attribute Selector */
+        [data-section] {
+            background-color: lightcoral;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        /* Attribute Selector with Specific Value */
+        [data-section="specific1"] {
+            background-color: lightpink;
+        }
+
+        [data-section="specific2"] {
+            background-color: lightyellow;
+            color: black;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Selectors Template</h1>
+    <p>This template demonstrates the use of ID selectors, attribute selectors, and attribute selectors with specific
+        values.</p>
+
+    <section id="section1">
+        <h2>ID Selector: Section 1</h2>
+        <p>This section is styled using the ID selector <code>#section1</code>.</p>
+    </section>
+
+    <section id="section2">
+        <h2>ID Selector: Section 2</h2>
+        <p>This section is styled using the ID selector <code>#section2</code>.</p>
+    </section>
+
+    <section data-section>
+        <h2>Attribute Selector: Section 1</h2>
+        <p>This section is styled using the attribute selector <code>[data-section]</code>.</p>
+    </section>
+
+    <section data-section>
+        <h2>Attribute Selector: Section 2</h2>
+        <p>This section is styled using the attribute selector <code>[data-section]</code>.</p>
+    </section>
+
+    <section data-section="specific1">
+        <h2>Attribute Selector with Specific Value: Section 1</h2>
+        <p>This section is styled using the attribute selector with a specific value
+            <code>[data-section="specific1"]</code>.</p>
+    </section>
+
+    <section data-section="specific2">
+        <h2>Attribute Selector with Specific Value: Section 2</h2>
+        <p>This section is styled using the attribute selector with a specific value
+            <code>[data-section="specific2"]</code>.</p>
+    </section>
+
+</body>
+
+</html>

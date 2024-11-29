@@ -1,0 +1,250 @@
+@media (max-width:767px) {
+    header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    header ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    header button {
+        width: 100%;
+    }
+
+    .main-container {
+        min-height: 700px;
+        padding-left: 20%;
+        padding-right: 20%;
+
+    }
+
+    .banner1-left .heading {
+        font-size: 3rem;
+    }
+
+    .banner2 .heading {
+        font-size: 4rem;
+    }
+
+    .banner3 h1::after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .banner3 h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner3 p {
+        font-size: 1rem;
+    }
+
+    .banner3 button {
+        width: 100%;
+    }
+
+    .banner3 {
+        background: linear-gradient(#4b0581, #ce0202);
+    }
+
+    .banner5-hero .email {
+        flex-direction: column;
+    }
+
+    .banner5-hero .email input,
+    .banner5-hero .email button {
+        width: 100%;
+    }
+
+    .banner5-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .header img {
+        width: 100px;
+    }
+
+    .header .nav select {
+        font-size: 1rem;
+    }
+
+    .banner5 {
+        min-height: fit-content;
+    }
+
+    .reasons .heading,
+    .faq .heading {
+        margin-top: 20px;
+        font-size: 1.5rem;
+    }
+
+    .division {
+        flex-direction: column;
+    }
+
+    .division .one {
+        width: 450px;
+    }
+
+    .faq details {
+        width: 100%;
+        margin-left: 10px;
+        padding: 20px;
+    }
+
+    footer .links {
+        flex-direction: row;
+        align-items: start;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+@media (max-width:576px) {
+    .banner1 {
+        flex-direction: column;
+        align-items: start;
+        padding: 50px 30px;
+    }
+
+    .banner1-right {
+        margin-top: 30px;
+    }
+
+    .banner1-left .heading {
+        font-size: 2.5rem;
+    }
+
+    .banner1-right img {
+        border: 5px solid #fff;
+        border-radius: 100% 100% 0px 0px;
+        padding: 20px;
+    }
+
+    .banner1-left button {
+        width: 100%;
+    }
+
+    /* .main-container{
+        min-height:700px ;
+        padding-left: 20%;
+        padding-right: 20%;
+        margin-right: 0;
+        margin-left: 20px;
+
+    }
+    .content{
+        min-height:150px ;
+    }
+    .content ul{
+       flex-wrap: wrap;
+    }
+    .featured-post .posts {
+        flex-direction: column;
+    }
+    .post-1,.post-2{
+        width: 100%;
+        margin: 0;
+    }
+    .author span{
+        margin-left:55% ;
+    }
+    footer{
+        width: 100%;
+        min-height:700px ;
+        margin-left: 20px;
+        padding-top: 60px;
+        align-items: left;
+    }
+    footer .form{
+        width: 70%;
+    }
+    .footer-main{
+        margin-top: 60px;
+        margin-bottom: 0;
+    } */
+    .banner4 {
+        background: url('https://th.bing.com/th?id=OIP.IB3efbOjWe-WF_rjLP8mtwHaFC&w=302&h=206&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2')no-repeat top, url('https://th.bing.com/th?id=OIP.e94Pbxsb15B3rI8k_agVVwHaE0&w=309&h=201&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2')no-repeat bottom;
+    }
+}
+
+@media (max-width:367px) {
+    .banner1-left .heading {
+        font-size: 2rem;
+    }
+
+    .banner3 h1::after {
+        width: 100%;
+    }
+
+    .banner4 {
+        background: url('https://th.bing.com/th?id=OIP.IB3efbOjWe-WF_rjLP8mtwHaFC&w=302&h=206&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2')no-repeat top, url('https://th.bing.com/th?id=OIP.e94Pbxsb15B3rI8k_agVVwHaE0&w=309&h=201&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2')no-repeat bottom;
+    }
+
+    .banner5 {
+        width: 100%;
+    }
+
+    .reasons,
+    .faq {
+        height: fit-content;
+        /* margin-right: 10px; */
+        margin: 0;
+
+    }
+
+    .reasons .heading,
+    .faq .heading {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+
+    .reasons .division {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .faq details {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .faq details summary {
+        font-size: 1rem;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .btn button {
+        margin-left: 40px;
+    }
+
+    .btn p {
+        /* text-align: center; */
+        margin-left: 26px;
+        font-size: 1.2rem;
+    }
+
+    footer .question h3 {
+        font-size: 16px;
+    }
+
+    footer .links {
+        flex-direction: column;
+        align-items: left;
+    }
+}

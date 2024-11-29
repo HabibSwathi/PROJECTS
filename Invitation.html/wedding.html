@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background color */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #c8a668;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Card container */
+        .card {
+            background-color: #1a2632;
+            color: white;
+            width: 350px;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Mandala design as background */
+        .card::before,
+        .card::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-image: url('https://path-to-your-mandala-image.png');
+            /* Replace with your image path */
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.6;
+        }
+
+        .card::before {
+            top: -30px;
+            left: -30px;
+        }
+
+        .card::after {
+            top: -30px;
+            right: -30px;
+            transform: scaleX(-1);
+            /* Mirror the mandala on the right side */
+        }
+
+        /* Card header */
+        .card h2 {
+            font-size: 32px;
+            font-family: 'Great Vibes', cursive;
+            margin-bottom: 15px;
+            color: #c8a668;
+        }
+
+        /* Event details */
+        .card .details {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .card .date,
+        .card .location {
+            font-size: 16px;
+            color: #c8a668;
+        }
+
+        /* Footer note */
+        .card .footer {
+            font-size: 12px;
+            margin-top: 15px;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Jhon Smith & Lorin Rosario</h2>
+        <p class="details">Together with their families</p>
+        <p class="details">Requesting your warm presence at the wedding of their daughter/son</p>
+        <p class="date">Tuesday, July 26, 2030</p>
+        <p class="location">10 o'clock in the venue</p>
+        <p class="details">Your Church Name Here <br> Your Address Goes Here</p>
+        <p class="footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    header ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    header button {
+        width: 100%;
+    }
+
+    .banner1-left .heading {
+        font-size: 3rem;
+    }
+
+    .banner2 .heading {
+        font-size: 4rem;
+    }
+
+    .featured-posts .posts,
+    .most-recent .posts {
+        flex-direction: column;
+    }
+
+    .stay-in-touch form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stay-in-touch input {
+        width: 100%;
+    }
+
+    
+}
+
+@media (max-width: 576px) {
+
+    .banner1 {
+        flex-direction: column;
+        align-items: start;
+        padding: 50px 30px;
+    }
+
+    .banner1-right {
+        margin-top: 30px;
+    }
+
+    .banner1-left .heading {
+        font-size: 2.5rem;
+    }
+
+    .banner1-right img {
+        border: 5px solid #fff;
+        border-radius: 100% 100% 0px 0px;
+        padding: 20px;
+    }
+
+    .banner1-left button {
+        width: 100%;
+    }
+
+    .featured-posts .posts,
+    .most-recent .posts {
+        gap: 10px;
+    }
+
+    .post {
+        margin-bottom: 10px;
+    }
+
+    .post img {
+        height: 150px;
+    }
+
+    .stay-in-touch form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stay-in-touch input,
+    .stay-in-touch button {
+        width: 100%;
+    }
+
+    .stay-in-touch h2,
+    footer p {
+        font-size: 18px;
+    }
+
+    footer nav a {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .stay-in-touch {
+        padding: 30px 15px;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+
+    .blurred-wrapper {
+        height: auto;
+        padding-bottom: 30px;
+    }
+}
+
+
+@media (max-width:367px) {
+    .banner1-left .heading {
+        font-size: 2rem;
+    }
+
+    footer {
+        height: 100px;
+        padding-bottom: 30px;
+    }
+}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millions Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: rgba(176, 164, 148, 1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links img {
+            width: 20%;
+            height: auto;
+            margin-right: 30px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .nav-links a {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: beige;
+            border-radius: 20px;
+            background-color: beige;
+            color: rgba(176, 164, 148, 1);
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons i {
+            padding-left: 10px;
+            font-size: 24px;
+            color: white;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin-top: 10px;
+        }
+
+        .image-container {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            filter: blur(20%);
+            transition: filter 1s;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .text-overlay h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .text-overlay p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+
+        .image-container:hover img {
+            filter: contrast(70%) grayscale(100%);
+        }
+
+        .image-effects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between images */
+            justify-content: center;
+        }
+
+        .image-text-container {
+            text-align: center;
+        }
+
+        .image-text-container img {
+            width: 300px;
+            height: auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px rgb(43, 43, 43);
+        }
+
+        .image-text-container p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #665c4f;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between columns */
+        }
+
+        footer > div {
+            flex: 1;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
+
+        footer > div:first-child {
+            flex: 1 1 200px;
+        }
+
+        footer > div:nth-child(2) {
+            flex: 2 1 400px; 
+            align-items: center; 
+            text-align: center; 
+        }
+
+        footer > div:last-child {
+            flex: 1 1 200px;
+        }
+
+        footer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer h2 {
+            color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: 0;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 5px 0;
+        }
+
+        footer .description {
+            color: beige;
+            font-family: cursive;
+            margin-top: 20px;
+        }
+
+        footer .quick-links h2 {
+            color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        footer .quick-links p {
+            margin: 5px 0;
+        }
+        .text-withimg{
+            flex: 1 1 200px;
+        }
+        marquee img{
+            flex: 1 2 400px;
+            width: 200px;
+            object-position: center;
+        }
+        marquee:hover img{
+            filter: blur(30px);
+            zoom: 100%  !important;
+            transition: 1s;
+            border-radius: 20px;
+        }
+        img:hover{
+            transition: 1s;
+            filter: blur(0px)  !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="nav-links">
+                <img src="https://yt3.googleusercontent.com/mCpw4FqXbs75VWbR8m24njvDznOqKk8ax_QDmVnfaYJx2Bh-a7-0BNCM4-mk5VId0VWYp_cSHjg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="no image found">
+                <a href="HOME.HTML">HOME</a>
+                <a href=".HTML">GALLERY</a>
+                <a href="HOME.HTML">ABOUT</a>
+                <a href="HOME.HTML">CONTACT</a>
+            </div>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+        <hr>
+    </header>
+
+    <div class="image-container">
+        <img src="https://www.tourmyindia.com/blog//wp-content/uploads/2018/10/Goa-Pre-Wedding-Photo-Shoot.jpg" alt="no image found">
+        <div class="text-overlay">
+            <h1>Millions Photography</h1>
+            <p>Explore The World Through Lenses : Photoyana, Your Gateway To Stunning Visual Stories! Join Us Today And Unleash Your Creativity.</p>
+        </div>
+    </div>
+
+    <div style="padding: 40px;">
+        <h1>Our Service</h1>
+        <div class="image-effects">
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/d0/4f/7d/d04f7d0e727cdaa82fc1c883725f2d3a.jpg" alt="no image found">
+                <p>Wedding</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/72/09/ba/7209baa5d5d1d39f68059ed81d6b81c1.jpg" alt="no image found">
+                <p>Pre-Wedding</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/ec/46/88/ec4688827b89b8472361548479518afa.jpg" alt="no image found">
+                <p>Engagement</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/f7/a5/06/f7a506715e1e2c56c1665cdfb3f4bf65.jpg" alt="no image found">
+                <p>Birthday</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding: 40px;">
+        <div class="image-effects">
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/64/6f/46/646f46d4e897dd3be4c5afe938be5cdf.jpg" alt="no image found">
+                <p>Baby Shower</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/69/fa/95/69fa9582a0a70db4af8398b2fc88f2f2.jpg" alt="no image found">
+                <p>Maternity And Pregnancy</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/a0/40/5d/a0405dd7964806c7b5bde120e91cd53a.jpg" alt="no image found">
+                <p>Baby Shoot</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/04/5d/39/045d39ddccadd224bbd3a83b8d41f531.jpg" alt="no image found">
+                <p>House Warming Ceremony</p>
+            </div>
+            <b style="font-size: larger;">And many more of your happy moments.</b>
+        </div>
+    </div>
+    
+    <h2 style="color: #665c4f; text-align: center; font-size: 40px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><b>Photo Gallery </b> </h2>
+    <p style="text-align: center;">The Best Photographers ❤️ Bangalore</p>
+
+    <div style="display: flex;">
+        <div style="flex: 1;  text-align: center; font-size: 40px; font-family: cursive; text-shadow: #665c4f;">
+            <div>
+                <h3>Your Beautiful Moments</h3>
+            </div>
+            
+        </div>
+    
+        <div style="flex: 3;">
+            <marquee behavior="" direction="" class="m1" scrollamount="20" id="firstmarquee" onmouseover="stopscroll()" onmouseout="startAgain()">
+                <img src="https://cdn0.weddingwire.in/vendor/7341/3_2/960/jpg/wedding-photographers-millions-photography-films-couple-shot-10_15_407341-165036146065326.jpeg" alt="">
+                <img src="https://image.wedmegood.com/resized/540X/uploads/member/661637/1687959479_VPP08988aa.jpg" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPc8psxnjY3qQaN9n-DnSToxa_FX9m36tccLne3HPXwobnoljzDxAk4eqDiSw0FYF9FXU&usqp=CAU" alt="">
+                <img src="https://cdn0.weddingwire.in/vendor/7341/3_2/960/jpg/wedding-photographers-millions-photography-films-couple-shot-23_15_407341-165036151529723.jpeg" alt="">
+                <img src="https://cdn0.weddingwire.in/vendor/7341/3_2/960/jpg/wedding-photographers-millions-photography-films-couple-shot-8_15_407341-165036145558837.jpeg" alt="">
+                <img src="https://image.wedmegood.com/resized/540X/uploads/member/2407108/1634550363_243355669_375216844307643_4347284866823396507_n.jpg" alt="">
+            </marquee>
+        </div>
+    </div>
+    
+
+        <script>
+            let marquee = document.getElementById('firstmarquee');
+            function stopscroll(){
+                marquee.stop();
+            }
+
+            function startAgain(){
+                marquee.start();
+            }
+        </script>
+
+    <footer>
+        <div>
+            <h2>Head Office</h2>
+            <p>No. 34, 9th cross, Ganesha Temple Street, Cholurpalya, Bangalore - 560 023</p>
+            <p>www.millionsphotography@gmail.com</p>
+            <p>+91 9880353501</p>
+            <p>+91 9060716091</p>
+        </div>
+        <div>
+            <img src="https://yt3.googleusercontent.com/mCpw4FqXbs75VWbR8m24njvDznOqKk8ax_QDmVnfaYJx2Bh-a7-0BNCM4-mk5VId0VWYp_cSHjg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="no image found">
+            <p class="description">Millions Photography is fully responsive, simple and modern photography created in line with the vision of the photographer as artist, using photography as a medium for creative expression. The goal of fine-art photography is to express an idea, a message, or an emotion.</p>
+        </div>
+        <div class="quick-links">
+            <h2>Quick Links</h2>
+            <p>Services</p>
+            <p>About Us</p>
+            <p>Contacts</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+your beautiful moments is not centre alligned

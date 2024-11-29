@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millions Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: rgba(176, 164, 148, 1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links img {
+        width: 20%;
+        height: auto;
+        margin-right: 30px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .nav-links a {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgba(176, 164, 148, 1);
+        text-decoration: none;
+        padding: 10px 20px;
+        color: white;
+    }
+    .social-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .social-icons i {
+        padding-left: 10px;
+        font-size: 24px;
+        color: white;
+    }
+        footer {
+            background-color: #665c4f;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between columns */
+        }
+
+        footer > div {
+            flex: 1;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
+
+        footer > div:first-child {
+            flex: 1 1 200px;
+        }
+
+        footer > div:nth-child(2) {
+            flex: 2 1 400px; 
+            align-items: center; 
+            text-align: center; 
+        }
+
+        footer > div:last-child {
+            flex: 1 1 200px;
+        }
+
+        footer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer h2 {
+            color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: 0;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 5px 0;
+        }
+
+        footer .description {
+            color: beige;
+            font-family: cursive;
+            margin-top: 20px;
+        }
+
+        footer .quick-links h2 {
+            color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        footer .quick-links p {
+            margin: 5px 0;
+        }
+        .text-withimg{
+            flex: 1 1 200px;
+        }
+        marquee img{
+            flex: 1 2 400px;
+            width: 400px;
+            object-position: center;
+        }
+        marquee:hover img{
+            filter: blur(30px);
+            zoom: 100%  !important;
+            transition: 1s;
+            border-radius: 20px;
+        }
+        .img-blur img:hover{
+            transition: 1s;
+            filter: blur(0px)  !important;
+            filter: grayscale(0px)  !important;
+        }
+        .image-container {
+            position: relative;
+            text-align: center;
+            color: white;
+            transition: 1s;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            filter: blur(20%);
+            filter: grayscale(100%);
+            transition: 1s;
+        }
+        .image-container:hover img {
+            transition: 1s  !important; 
+            /* filter: contrast(70%) */
+            filter: grayscale(0%);
+            transition: 1s;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .text-overlay h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .image-container:hover img {
+            transition: 1s  !important; 
+            /* filter: contrast(70%) */
+            filter: grayscale(0%);
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="nav-links">
+                <img src="https://yt3.googleusercontent.com/mCpw4FqXbs75VWbR8m24njvDznOqKk8ax_QDmVnfaYJx2Bh-a7-0BNCM4-mk5VId0VWYp_cSHjg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="no image found">
+                <a href="HOME.HTML">HOME</a>
+                <a href="GALLERY.HTML">GALLERY</a>
+                <a style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                border: beige;
+                border-radius: 20px;
+                background-color: beige;
+                color: rgba(176, 164, 148, 1);"  href="ABOUTUS.HTML">ABOUT US</a>
+                <a href="CONTACT.HTML">CONTACT</a>
+                <a href="SERVICE.HTML">SERVICE</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/millions_photography_films/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="CONTACT.HTML">Contacts</a>
+        </div>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+        <hr>
+    </header>
+
+    <div class="image-container">
+        <img src="https://image.wedmegood.com/resized/540X/uploads/member/1691585/1688801574_IMG_6914_org.jpg?crop=12,7,2023,1138" alt="no image found">
+        <div class="text-overlay">
+            <h1>ABOUT US</h1>
+        </div>
+    </div>
+
+    <div style="padding: 20px;">
+        <h1 style="font-size: 50px; font-family: fantasy; text-align: center;">Millions Photography</h1>
+        <p style="font-size: large; font-family: 'Times New Roman', Times, serif;">From creating a beautiful image gallery to booking sessions , we're laying it.
+        </p>
+        <p style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+
+            We bring you the best photography for the person who loves to see the world through the lens.
+        </p>
+        <p style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+            
+            Images have a more significant impact and help you keep iformation. without pictures, you cannot see now life was before the present time. It also allows you to compare different things and identify changes.
+
+        </p>
+        <p style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+            
+            As photographers we notice the small things. It's the details that bring an experience together. We notice textures, nature, light, expressions, and surroundings. This allows us to capture the beauty in every situation.
+        </p>
+        <p style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+            
+            OUR Skills
+            phtography isn't just a hobby or a profession; it's a language we speak fluently. Our journey as a photographer on Million Photigraphy has been a profound and rewarding one, marked by continuous growth and artistic exploration.
+        </p>
+        <p style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+            
+            On Millions Photography, we are not just a photographer, we are a storyteller , an artist, and a collaborator. Our skills are a testament to our commitment to the craft and our desire to contribute to the ever-growing tapestry of visual narratives within the Million Photigraphy community. Join me in this exciting journey of exploration and creativity.</p>
+    </div>
+
+    <footer>
+        <div>
+            <h2>Head Office</h2>
+            <p>No. 34, 9th cross, Ganesha Temple Street, Cholurpalya, Bangalore - 560 023</p>
+            <p>www.millionsphotography@gmail.com</p>
+            <p>+91 9880353501</p>
+            <p>+91 9060716091</p>
+        </div>
+        <div>
+            <img src="https://yt3.googleusercontent.com/mCpw4FqXbs75VWbR8m24njvDznOqKk8ax_QDmVnfaYJx2Bh-a7-0BNCM4-mk5VId0VWYp_cSHjg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="no image found">
+            <p class="description">Millions Photography is fully responsive, simple and modern photography created in line with the vision of the photographer as artist, using photography as a medium for creative expression. The goal of fine-art photography is to express an idea, a message, or an emotion.</p>
+        </div>
+        <div class="quick-links">
+            <h2>Quick Links</h2>
+            <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="SERVICE.HTML">Service</a>
+            <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="ABOUTUS.HTML">About Us</a>
+            <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="CONTACT.HTML">Contacts</a>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>

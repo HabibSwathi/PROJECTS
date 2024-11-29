@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Boxes (Success, Warning, Failed)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #show-success {
+            background-color: #4CAF50;
+        }
+
+        #show-warning {
+            background-color: #FF9800;
+        }
+
+        #show-failed {
+            background-color: #F44336;
+        }
+
+        .dialog-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 10;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .dialog-box.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .dialog-box .circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+            left: calc(50% - 40px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success .circle {
+            background-color: #4CAF50;
+        }
+
+        .warning .circle {
+            background-color: #FF9800;
+        }
+
+        .failed .circle {
+            background-color: #F44336;
+        }
+
+        .circle .icon {
+            font-size: 40px;
+            color: white;
+            transform: scale(0);
+            transition: transform 0.5s ease;
+        }
+
+        .dialog-box.show .icon {
+            transform: scale(1);
+            animation: popIcon 0.5s ease;
+        }
+
+        .dialog-box h2 {
+            margin-top: 50px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .dialog-box p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .dialog-box button {
+            margin-top: 20px;
+            background-color: #ccc;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dialog-box button:hover {
+            background-color: #bbb;
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .blur-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            display: none;
+            z-index: 5;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @keyframes fadeOutScale {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+        }
+
+        @keyframes popIcon {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="blur-background" class="blur-background"></div>
+
+    <div class="button-group">
+        <button id="show-success">Show Success</button>
+        <button id="show-warning">Show Warning</button>
+        <button id="show-failed">Show Failed</button>
+    </div>
+
+    <div id="success-dialog-box" class="dialog-box success">
+        <div class="circle">
+            <span class="icon">&#10003;</span>
+        </div>
+        <h2>Success</h2>
+        <p>The operation was completed successfully.</p>
+        <button id="close-success">OKAY</button>
+    </div>
+
+    <div id="warning-dialog-box" class="dialog-box warning">
+        <div class="circle">
+            <span class="icon">!</span>
+        </div>
+        <h2>Warning</h2>
+        <p>There is something you need to be cautious about.</p>
+        <button id="close-warning">OKAY</button>
+    </div>
+
+    <div id="failed-dialog-box" class="dialog-box failed">
+        <div class="circle">
+            <span class="icon">&#10007;</span>
+        </div>
+        <h2>Failed</h2>
+        <p>Unfortunately, the operation failed.</p>
+        <button id="close-failed">OKAY</button>
+    </div>
+
+    <script>
+        function showDialog(dialogBoxId) {
+            const blurBackground = document.getElementById("blur-background");
+            const dialogBox = document.getElementById(dialogBoxId);
+            blurBackground.style.display = "block";
+            dialogBox.style.display = "block";
+            setTimeout(() => dialogBox.classList.add("show"), 10); // trigger animation
+        }
+
+        function closeDialog(dialogBoxId) {
+            const blurBackground = document.getElementById("blur-background");
+            const dialogBox = document.getElementById(dialogBoxId);
+            dialogBox.classList.remove("show");
+            setTimeout(() => {
+                dialogBox.style.display = "none";
+                blurBackground.style.display = "none";
+            }, 500); // wait for animation to finish
+        }
+
+        const showSuccessButton = document.getElementById("show-success");
+        const closeSuccessButton = document.getElementById("close-success");
+
+        showSuccessButton.addEventListener("click", function () {
+            showDialog("success-dialog-box");
+        });
+
+        closeSuccessButton.addEventListener("click", function () {
+            closeDialog("success-dialog-box");
+        });
+
+        const showWarningButton = document.getElementById("show-warning");
+        const closeWarningButton = document.getElementById("close-warning");
+
+        showWarningButton.addEventListener("click", function () {
+            showDialog("warning-dialog-box");
+        });
+
+        closeWarningButton.addEventListener("click", function () {
+            closeDialog("warning-dialog-box");
+        });
+
+        const showFailedButton = document.getElementById("show-failed");
+        const closeFailedButton = document.getElementById("close-failed");
+
+        showFailedButton.addEventListener("click", function () {
+            showDialog("failed-dialog-box");
+        });
+
+        closeFailedButton.addEventListener("click", function () {
+            closeDialog("failed-dialog-box");
+        });
+    </script>
+
+</body>
+
+</html>

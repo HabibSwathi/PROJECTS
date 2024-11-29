@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millions Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: rgba(176, 164, 148, 1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links img {
+            width: 20%;
+            height: auto;
+            margin-right: 30px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .nav-links a {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgba(176, 164, 148, 1);
+            text-decoration: none;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons i {
+            padding-left: 10px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .image-container {
+            position: relative;
+            text-align: center;
+            color: white;
+            transition: 1s;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            filter: blur(20%);
+            filter: grayscale(100%);
+            transition: 1s;
+        }
+
+        .image-container:hover img {
+            transition: 1s !important;
+            /* filter: contrast(70%) */
+            filter: grayscale(0%);
+            transition: 1s;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .text-overlay h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .image-container:hover img {
+            transition: 1s !important;
+            /* filter: contrast(70%) */
+            filter: grayscale(0%);
+            transition: 1s;
+        }
+
+        .image-effects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .image-text-container {
+            text-align: center;
+        }
+
+        .image-text-container img {
+            width: 300px;
+            height: auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px rgb(43, 43, 43);
+        }
+
+        .image-text-container p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #665c4f;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Space between columns */
+        }
+
+        footer>div {
+            flex: 1;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center items horizontally */
+        }
+
+        footer>div:first-child {
+            flex: 1 1 200px;
+        }
+
+        footer>div:nth-child(2) {
+            flex: 2 1 400px;
+            align-items: center;
+            text-align: center;
+        }
+
+        footer>div:last-child {
+            flex: 1 1 200px;
+        }
+
+        footer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer h2 {
+            color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: 0;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 5px 0;
+        }
+
+        footer .description {
+            color: beige;
+            font-family: cursive;
+            margin-top: 20px;
+        }
+
+        footer .quick-links h2 {
+            color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        footer .quick-links p {
+            margin: 5px 0;
+        }
+
+        .text-withimg {
+            flex: 1 1 200px;
+        }
+
+        marquee img {
+            flex: 1 2 400px;
+            width: 400px;
+            object-position: center;
+        }
+
+        marquee:hover img {
+            filter: blur(30px);
+            zoom: 100% !important;
+            transition: 1s;
+            border-radius: 20px;
+        }
+
+        .img-blur img:hover {
+            transition: 1s;
+            filter: blur(0px) !important;
+            filter: grayscale(0px) !important;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333333;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555555;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container textarea,
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-container textarea {
+            resize: vertical;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #665c4f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #554a3e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="nav-links">
+                <img src="https://yt3.googleusercontent.com/mCpw4FqXbs75VWbR8m24njvDznOqKk8ax_QDmVnfaYJx2Bh-a7-0BNCM4-mk5VId0VWYp_cSHjg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+                    alt="no image found">
+                <a style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                border: beige;
+                border-radius: 20px;
+                background-color: beige;
+                color: rgba(176, 164, 148, 1);" href="HOME.HTML">HOME</a>
+                <a href="GALLERY.HTML">GALLERY</a>
+                <a href="ABOUTUS.HTML">ABOUT US</a>
+                <a href="CONTACT.HTML">CONTACT</a>
+                <a href="SERVICE.HTML">SERVICE</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/millions_photography_films/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="CONTACT.HTML">Contacts</a>
+            </div></a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        </div>
+        <hr>
+    </header>
+
+    <div class="image-container">
+        <img src="https://www.tourmyindia.com/blog//wp-content/uploads/2018/10/Goa-Pre-Wedding-Photo-Shoot.jpg"
+            alt="no image found">
+        <div class="text-overlay">
+            <h1>Millions Photography</h1>
+            <p>Explore The World Through Lenses : Million Photigraphy, Your Gateway To Stunning Visual Stories! Join Us
+                Today And Unleash Your Creativity.</p>
+        </div>
+    </div>
+
+    <div class="form-image-container"
+        style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+        <!-- Image on the left side -->
+        <div class="image-container" style="flex: 1; padding-right: 20px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZeAFANpMbQUS7nbABy7T7HycGSleGuHY_3HAk0jZZvkjF04syS0VIRYEY3R9kOOwm0Ss&usqp=CAU"
+                alt="Service Image" style="max-width: 100%; height: auto;">
+        </div>
+
+        <!-- Form on the right side -->
+        <div class="form-container" style="flex: 1;">
+            <h2>Service Request Form</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" placeholder="Your mobile number" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+                <label for="requirements">Requirements:</label>
+                <textarea id="requirements" name="requirements" rows="4" placeholder="Your specific requirements"
+                    required></textarea>
+
+                <label for="service">Service:</label>
+                <input type="text" id="service" name="service" placeholder="Service Required" required>
+
+                <label for="city">Your City:</label>
+                <input type="text" id="city" name="city" placeholder="Your city name" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div style="padding: 40px;">
+        <h1>Our Service</h1>
+        <div class="image-effects">
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/d0/4f/7d/d04f7d0e727cdaa82fc1c883725f2d3a.jpg" alt="no image found">
+                <p>Wedding</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/72/09/ba/7209baa5d5d1d39f68059ed81d6b81c1.jpg" alt="no image found">
+                <p>Pre-Wedding</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/ec/46/88/ec4688827b89b8472361548479518afa.jpg" alt="no image found">
+                <p>Engagement</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/f7/a5/06/f7a506715e1e2c56c1665cdfb3f4bf65.jpg" alt="no image found">
+                <p>Birthday</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding: 40px;">
+        <div class="image-effects">
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/64/6f/46/646f46d4e897dd3be4c5afe938be5cdf.jpg" alt="no image found">
+                <p>Baby Shower</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/69/fa/95/69fa9582a0a70db4af8398b2fc88f2f2.jpg" alt="no image found">
+                <p>Maternity And Pregnancy</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/a0/40/5d/a0405dd7964806c7b5bde120e91cd53a.jpg" alt="no image found">
+                <p>Baby Shoot</p>
+            </div>
+            <div class="image-text-container">
+                <img src="https://i.pinimg.com/564x/04/5d/39/045d39ddccadd224bbd3a83b8d41f531.jpg" alt="no image found">
+                <p>House Warming Ceremony</p>
+            </div>
+            <b style="font-size: larger;">And many more of your happy moments.</b>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2
+        style="color: #665c4f; text-align: center; font-size: 40px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <b>Photo Gallery </b> </h2>
+    <p style="text-align: center;">The Best Photographers ❤️ Bangalore</p>
+
+    <div class="img-blur" class="img-blur" style="display: flex; padding: 30px;">
+        <div
+            style="flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 40px; font-family: cursive; text-shadow: #665c4f;">
+            <h3 style="margin: 0;">Your Beautiful Moments</h3>
+        </div>
+
+        <div style="flex: 3;">
+            <marquee behavior="" direction="" class="marquee" scrollamount="20" id="firstmarquee"
+                onmouseover="stopscroll()" onmouseout="startAgain()">
+                <img src="https://cdn0.weddingwire.in/vendor/7341/3_2/960/jpg/wedding-photographers-millions-photography-films-couple-shot-10_15_407341-165036146065326.jpeg"
+                    alt="">
+                <img src="https://image.wedmegood.com/resized/540X/uploads/member/661637/1687959479_VPP08988aa.jpg"
+                    alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPc8psxnjY3qQaN9n-DnSToxa_FX9m36tccLne3HPXwobnoljzDxAk4eqDiSw0FYF9FXU&usqp=CAU"
+                    alt="">
+                <img src="https://cdn0.weddingwire.in/vendor/7341/3_2/960/jpg/wedding-photographers-millions-photography-films-couple-shot-23_15_407341-165036151529723.jpeg"
+                    alt="">
+                <img src="https://cdn0.weddingwire.in/vendor/7341/3_2/960/jpg/wedding-photographers-millions-photography-films-couple-shot-8_15_407341-165036145558837.jpeg"
+                    alt="">
+                <img src="https://image.wedmegood.com/resized/540X/uploads/member/2407108/1634550363_243355669_375216844307643_4347284866823396507_n.jpg"
+                    alt="">
+            </marquee>
+        </div>
+    </div>
+
+    <script>
+        let marquee = document.getElementById('firstmarquee');
+
+        function stopscroll() {
+            marquee.stop();
+        }
+
+        function startAgain() {
+            marquee.start();
+        }
+    </script>
+
+    <h2
+        style="color: #665c4f; text-align: center; font-size: 40px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <b>Follow Us On Youtube</b> </h2>
+
+    <div style="display: flex;">
+        <div style="flex: 1.5; padding-top: 20px; padding-bottom: 20px; padding-left: 20px;">
+            <iframe width="950" height="636" src="https://www.youtube.com/embed/QF2BcZiTFJc?si=lGoSLu1YAT8_Refh"
+                title=" video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div
+            style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center; font-size: 40px; font-family: cursive; text-shadow: #665c4f;">
+            <iframe style="padding-top:20px ;" width="475" height="318"
+                src="https://www.youtube.com/embed/J-0Rio2wr84?si=2MzZ8xs7VMOFflGJ" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe style="padding-bottom: 20px;" width="475" height="318"
+                src="https://www.youtube.com/embed/WnNUooqs1ZA?si=CtUjPUCe98g1AgFk" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <h2>Head Office</h2>
+            <p>No. 34, 9th cross, Ganesha Temple Street, Cholurpalya, Bangalore - 560 023</p>
+            <p>www.millionsphotography@gmail.com</p>
+            <p>+91 9880353501</p>
+            <p>+91 9060716091</p>
+        </div>
+        <div>
+            <img src="https://yt3.googleusercontent.com/mCpw4FqXbs75VWbR8m24njvDznOqKk8ax_QDmVnfaYJx2Bh-a7-0BNCM4-mk5VId0VWYp_cSHjg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+                alt="no image found">
+            <p class="description">Millions Photography is fully responsive, simple and modern photography created in
+                line with the vision of the photographer as artist, using photography as a medium for creative
+                expression. The goal of fine-art photography is to express an idea, a message, or an emotion.</p>
+        </div>
+        <div class="quick-links">
+            <h2>Quick Links</h2>
+            <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="SERVICE.HTML">Service</a>
+            <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="ABOUTUS.HTML">About Us</a>
+            <a style="color: rgba(176, 164, 148, 1);
+        text-decoration: none;" href="CONTACT.HTML">Contacts</a>
+        </div>
+    </footer>
+</body>
+
+</html>

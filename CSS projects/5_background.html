@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Properties Template</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container with all background properties */
+        .background-container {
+            /* Set up the size and spacing */
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+
+            /* Background properties */
+            background-color: #333;
+            /* Fallback color */
+            background-image:
+                url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=600&q=80'),
+                /* Image layer */
+                linear-gradient(45deg, rgba(255, 0, 150, 0.6), rgba(0, 204, 255, 0.6));
+            /* Gradient overlay */
+            background-size: cover, 100%;
+            background-repeat: no-repeat, no-repeat;
+            background-position: center, center;
+            background-attachment: fixed, scroll;
+            background-blend-mode: overlay;
+        }
+
+        /* Content styling */
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            /* Adds a frosted-glass effect */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #333;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-container">
+        <div class="content">
+            <h1>Welcome to Our Site</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque deserunt aliquid veritatis doloribus.</p>
+            <button class="button">Learn More</button>
+        </div>
+    </div>
+</body>
+
+</html>

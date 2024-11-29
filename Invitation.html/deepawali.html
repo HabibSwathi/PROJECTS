@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: radial-gradient(circle, #4b0000, #2e1a09);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background: #fff3e0;
+            width: 500px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            color: #4b0000;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #ffbf00;
+        }
+
+        .card:before {
+            content: "";
+            background: url('https://i.pinimg.com/564x/20/79/2f/20792f728313b4e7a3e54d3d994bb56d.jpg') no-repeat center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .card h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #ff6f00;
+            margin-bottom: 10px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #4b0000;
+            margin-bottom: 10px;
+            font-weight: normal;
+            z-index: 1;
+            position: relative;
+        }
+
+        .card img {
+            width: 180px;
+            margin: 20px 0;
+            z-index: 1;
+            position: relative;
+        }
+
+        .card p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            z-index: 1;
+            position: relative;
+            color: #4b0000;
+        }
+
+        .highlight {
+            color: #ff6f00;
+            font-weight: bold;
+        }
+
+        .card .footer {
+            margin-top: 30px;
+            font-size: 16px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .card .footer a {
+            color: #4b0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            opacity: 0.8;
+        }
+
+        .top-left {
+            top: -20px;
+            left: -20px;
+        }
+
+        .bottom-right {
+            bottom: -20px;
+            right: -20px;
+            transform: rotate(180deg);
+        }
+
+        .fireworks {
+            width: 900px;
+            position: absolute;
+            top: -40px;
+            right: -30px;
+            z-index: 0;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="https://png.pngtree.com/png-vector/20231109/ourmid/pngtree-beautiful-diwali-greeting-card-design-with-mandala-art-and-diya-png-image_10542671.png"
+            alt="Diya Image">
+        <h1>Diwali Celebration</h1>
+        <h2>Let's Celebrate the Festival of Lights</h2>
+        <p>We are thrilled to invite you to a night filled with lights, laughter, and joy as we celebrate the festival
+            of <span class="highlight">Diwali</span>.</p>
+        <p><strong>Date:</strong> November 10, 2024</p>
+        <p><strong>Time:</strong> 6:00 PM Onwards</p>
+        <p><strong>Venue:</strong> The Grand Hall, Lotus Palace, Main Street, City</p>
+        <p>Come join us for an evening of delicious food, festive fun, and sparkling fireworks.</p>
+        <div class="footer">
+            <p>With Warm Regards,</p>
+            <p><a href="#">From Habib Family</a></p>
+        </div>
+        <!-- <img src="https://i.gifer.com/VZvx.gif" alt="Fireworks" class="fireworks"> -->
+        <img src="https://i.gifer.com/VZvx.gif" alt="Fireworks" class="fireworks">
+
+    </div>
+</body>
+
+</html>

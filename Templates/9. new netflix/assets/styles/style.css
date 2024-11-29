@@ -1,0 +1,322 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #000;
+}
+
+.blur-bg {
+    background: url('https://i.pinimg.com/736x/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg') no-repeat cover;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 120px;
+}
+
+.nav-links button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.sign-in-btn {
+    padding: 8px 20px;
+    background: #e50914;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 90vh;
+    width: 85%;
+    margin: 30px auto;
+    /* Center horizontally */
+    border-radius: 20px;
+    /* Rounded corners for the border */
+    overflow: hidden;
+    /* Clip content to match the border radius */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* Light border */
+    background: url('https://i.pinimg.com/736x/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Overlay for Gradient Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+/* Content Section */
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 100px;
+    /* Push content down */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Email Form */
+.email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email-input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.get-started-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #e50914;
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.get-started-btn:hover {
+    background: #f40612;
+}
+
+/* Navigation Dots */
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    /* Space below the dots */
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #e50914;
+    /* Highlight the active dot */
+}
+
+.dot:hover {
+    background-color: #f40612;
+}
+
+.trending {
+    width: 100%;
+    min-height: 20vh;
+    /* overflow-x: scroll; */
+    margin-top: 0%;
+    padding: 10px 8%;
+
+}
+
+.only-netflix {
+    width: 100%;
+    min-height: 20vh;
+    margin-top: 10px;
+    padding: 10px 8%;
+}
+
+.heading {
+    color: #fff;
+    padding-left: 10%;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.trending .movies img,
+.only-netflix .movies img {
+    padding-left: 10px;
+    border-radius: 20px;
+    /* display: flex; */
+    /* align-items: center; */
+    gap: 20px;
+    flex-direction: column;
+
+}
+
+.movies ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition-delay: 1s;
+    /* position:static; */
+}
+
+.movies ul li img:hover {
+    transform: scale(1.1);
+    border-radius: 20px;
+}
+
+.reasons,
+.faq {
+    width: 100%;
+    min-height: 30vh;
+    padding: 0px 8%;
+}
+
+.division {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    justify-content: space-evenly;
+
+}
+
+.one {
+    width: 350px;
+    height: 200px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.one .small-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.one .small-tag i {
+    font-size: 2.5rem;
+    padding: 20px;
+    /* background: linear-gradient(#130678,#a30909); */
+    color: #ff000dad;
+
+}
+
+.faq {
+    margin-top: 5%;
+
+}
+
+.faq details {
+    width: 80%;
+    border: 1px solid #fff;
+    background-color: #161616b8;
+    color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    margin-left: 7%;
+    border-radius: 10px;
+    font-size: 1.4rem;
+
+}
+
+.faq details summary {
+    width: 80%;
+    /* margin-top: 10px; */
+    padding: 10px 0px;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.btn p {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 8%;
+    min-height: 20%;
+    color: #938d8d;
+}
+
+footer .question h3 {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+
+}
+
+footer .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.links .one-links ul {
+    list-style-type: none;
+}
+
+.links .one-links ul li {
+    padding-bottom: 10px;
+}
+
+.links .one-links ul li a {
+    font-size: 1rem;
+    color: #938d8d;
+    letter-spacing: 1px;
+}
+
+.links .one-links ul li a:active {
+    color: red;
+}
+
+.email button,
+.btn button {
+    padding: 8px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    background-color: #e50914;
+    color: #fff;
+}

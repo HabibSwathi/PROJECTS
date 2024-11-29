@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Star</title>
+    <style>
+        svg {
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <svg>
+        <path d="M 100,10
+                 L 120,75
+                 L 180,75
+                 L 130,115
+                 L 150,180
+                 L 100,140
+                 L 50,180
+                 L 70,115
+                 L 20,75
+                 L 80,75
+                 Z" stroke="black" fill="none" stroke-width="3" />
+    </svg>
+
+    <svg viewBox="0 0 100 100" width="200" height="200">
+        <!-- Head -->
+        <circle cx="50" cy="20" r="10" fill="black" />
+
+        <!-- Body -->
+        <line x1="50" y1="30" x2="50" y2="60" stroke="black" stroke-width="5" />
+
+        <!-- Left arm -->
+        <line x1="50" y1="35" x2="40" y2="45" stroke="black" stroke-width="5" />
+
+        <!-- Right arm holding the package -->
+        <line x1="50" y1="35" x2="60" y2="45" stroke="black" stroke-width="5" />
+        <rect x="60" y="40" width="15" height="15" fill="black" />
+
+        <!-- Left leg -->
+        <line x1="50" y1="60" x2="45" y2="80" stroke="black" stroke-width="5" />
+
+        <!-- Right leg -->
+        <line x1="50" y1="60" x2="55" y2="80" stroke="black" stroke-width="5" />
+    </svg>
+
+    <svg viewBox="0 0 250 150" width="300" height="200">
+        <!-- Monitor frame -->
+        <path d="M30 30 
+                 l 100 0 
+                 l 0 90 
+                 l -100 0 
+                 z" fill="black" />
+
+        <!-- Screen (inner rectangle) -->
+        <path d="M40 40 
+                 l 80 0 
+                 l 0 70 
+                 l -80 0 
+                 z" fill="white" />
+
+        <!-- Monitor base -->
+        <path d="M55 120 
+                 l 50 0 
+                 l 0 10 
+                 l -50 0 
+                 z" fill="black" />
+
+        <!-- Bottom stand -->
+        <path d="M45 130 
+                 l 70 0 
+                 l 0 10 
+                 l -70 0 
+                 z" fill="black" />
+
+        <!-- CPU case -->
+        <path d="M150 40 
+                 l 50 0 
+                 l 0 80 
+                 l -50 0 
+                 z" fill="black" />
+
+        <!-- CPU details (buttons/drive) -->
+        <path d="M165 50 
+                 l 20 0 
+                 l 0 5 
+                 l -20 0 
+                 z" fill="white" />
+
+        <path d="M165 65 
+                 l 10 0 
+                 l 0 3 
+                 l -10 0 
+                 z" fill="white" />
+
+        <path d="M165 75 
+                 l 10 0 
+                 l 0 3 
+                 l -10 0 
+                 z" fill="white" />
+    </svg>
+
+    <svg style="width:100%; height:90vh;">
+        <path d="M30 300 L100 260 L90 220 L140 240 L140 280 L30 300" stroke="#0c0c0c" fill="#FFDBB5" />
+        <path d="M140 240 L300 200 L280 280 L140 280" stroke="#0c0c0c" fill="#FFD7C4" />
+        <path d="M300 200 L400 210 L480 200 L410 300 L280 280" stroke="#0c0c0c" fill="#384B70" />
+        <path d="M480 200 L397 320 L250 370 L220 440 L420 390 L560 300 L550 160 L520 160 L480 200" stroke="#0c0c0c"
+            fill="#384B70" />
+        <path d="M220 440 L90 440 L120 400 L250 370 L220 440" stroke="#0c0c0c" fill="#FFD7C4" />
+        <path d="M120 400 L60 390 L70 490 L120 400" stroke="#0c0c0c" fill="#FFDBB5" />
+    </svg>
+
+</body>
+
+</html>

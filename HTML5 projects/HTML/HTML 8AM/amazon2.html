@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Amazon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #222;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background-color: #ffffff;
+
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #232F3E;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            height: 80px;
+
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #FF9900;
+            text-decoration: none;
+
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #FF9900;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main {
+            margin-bottom: 5px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 300px;
+
+        }
+
+        .head2 img {
+            border: 2px solid rgb(4, 107, 37);
+            padding: 3px;
+        }
+
+        .heading1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .head1 ul li {
+            font-size: 20px;
+
+        }
+
+        .head1 nav ul li a {
+            color: #222;
+        }
+
+        .head3 input {
+            padding: 10px 20px;
+
+        }
+
+        .head3 {
+            gap: 50px;
+
+        }
+
+        .divider {
+            border: 2px solid gray;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .image1 {
+            display: flex;
+            gap: 10px;
+        }
+
+        .right {
+            display: flex;
+            gap: 7px;
+        }
+
+        .image2,
+        .image3 {
+            gap: 5px;
+        }
+
+        .bottoms-image {
+            display: flex;
+            background-color: rgb(170, 168, 168);
+        }
+
+        .bottoms-image img {
+            margin: auto;
+        }
+
+        .recommend {
+            text-align: center;
+
+        }
+
+        .recommend h1 {
+            font-size: 35px;
+            padding: 20px 20px;
+        }
+
+        .recommend h2 {
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        .recommend img {
+            margin: 5px 0px;
+        }
+
+        .recommend button {
+            border: none;
+            font-size: 20px;
+            padding: 10px 100px;
+            margin-top: 60px;
+            box-shadow: 3px 3px 15px rgb(0, 0, 0);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .recommend button:hover {
+            background-color: rgb(146, 145, 145);
+        }
+
+        .recommend h3 {
+            font-weight: 100;
+        }
+
+        footer {
+            background-color: #232F3E;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .content ul li a {
+            text-decoration: none;
+            color: #ffffff;
+
+        }
+
+        .content ul {
+            list-style-type: none;
+        }
+
+        footer h4 {
+            color: #ffffff;
+        }
+
+        .content ul li a:hover {
+            text-decoration: underline 1px #ffffff;
+        }
+
+        .end {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+
+        }
+
+        .end p {
+            color: #ffffff;
+        }
+
+        .bar {
+            background-color: #273648;
+            width: 100%;
+            height: 40px;
+
+        }
+
+        .bar h3 a {
+            text-decoration: none;
+            padding: 10px;
+            color: #ffffff;
+
+        }
+
+        .bar h3 {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://pngimg.com/uploads/amazon/amazon_PNG13.png" alt="" width="200" height="200">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button type="submit">Search</button>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">fashions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="main">
+        <div class="hero-image">
+            <img src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/2/AmazonStores/A21TJRUUN4KGV/75c21f56e3127a7b0b1d17f630252fb2.w3000.h600.CR0%2C0%2C3000%2C600_SX1920.jpg"
+                alt="">
+        </div>
+
+
+        <div class="heading1">
+            <div class="head2">
+                <img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/9c78e5ef-6eac-4c4e-9482-5c516d15865a.CR0%2C0%2C749%2C750_SX200.PNG"
+                    alt="" width="100px" height="100px">
+
+            </div>
+            <div class="head1">
+                <nav>
+                    <ul>
+                        <li><i class="fa-solid fa-download"></i></li>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#">Tops<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="#">Dresses<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="#">Bottoms<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="#">Winter<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="#">Basics</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="head3">
+                <input type="text" placeholder="Search for products...">
+            </div>
+        </div>
+        </div>
+
+    </section>
+    <div class="divider"></div>
+
+    <section class="images">
+        <div class="image1">
+            <div class="left">
+                <img src="https://th.bing.com/th/id/OIP.1KHnqD_S-btUGWZPnLyB_AAAAA?rs=1&pid=ImgDetMain" alt="loading"
+                    width="500" height="705">
+            </div>
+            <div class="right">
+                <div class="top">
+                    <img src="https://i.pinimg.com/736x/cc/25/3f/cc253f32164723b43c7f4ea01a2f66d9.jpg" alt="loading"
+                        width="460" height="350">
+                    <img src="https://veryeasymakeup.com/wp-content/uploads/2022/03/summer-halter-dress-BTFBM.jpg"
+                        alt="loading" width="460" height="350">
+                </div>
+                <div class="bottom">
+                    <img src="https://th.bing.com/th/id/OIP.Lb95ndfgHeELI3EEMOox8gHaMI?w=850&h=1393&rs=1&pid=ImgDetMain"
+                        alt="loading" width="460" height="350">
+                    <img src="https://m.media-amazon.com/images/I/61ATCqwHGoL.AC_UL960_QL65.jpg" alt="loading"
+                        width="460" height="350">
+                </div>
+            </div>
+        </div>
+        <div class="image2">
+            <img src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/b/AmazonStores/A21TJRUUN4KGV/f65478e2b43e088fd231751ed38afd35.w6912.h3456.SL5000_CR0%2C0%2C5000%2C2500_SX6912_SY3456.png"
+                alt="loading" width="720">
+            <img src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/9/AmazonStores/A21TJRUUN4KGV/1ab6ab620e8dbbf65d9ccb4a17c6a5fc.w6912.h3456.SL5000_CR0%2C0%2C5000%2C2500_SX6912_SY3456.png"
+                alt="loading" width="720">
+        </div>
+        <div class="image3">
+            <img src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/3/AmazonStores/A21TJRUUN4KGV/833ad1de87339d1ff57fca863335560b.w6912.h3456.SL5000_CR0%2C0%2C5000%2C2500_SX6912_SY3456.png"
+                alt="loading" width="720">
+            <img src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/c/AmazonStores/A21TJRUUN4KGV/00495f34b0865c55abee0c4bc7a798dd.w6912.h3456.SL5000_CR0%2C0%2C5000%2C2500_SX6912_SY3456.png"
+                alt="loading" width="720">
+        </div>
+    </section>
+
+    <section class="bottoms-image">
+        <img src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/4/AmazonStores/A21TJRUUN4KGV/369ac85f85053d37fc83e744e0e8bf9a.w6912.h3456.SL5000_CR0%2C0%2C5000%2C2500_SX6912.png"
+            alt="loading" width="800" height="750">
+    </section>
+
+    <section class="recommend">
+        <h2 style="font-weight:100;">Featured Deals</h2>
+        <p>Sorry, there are currently no available deals.</p>
+
+        <h1>Recommended for You</h1>
+        <img src="https://m.media-amazon.com/images/I/51ejIFXMOcL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/616jhtvi7tL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/614HstznsIL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="	https://m.media-amazon.com/images/I/81qGq0ocvPL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt=""
+            width="205" height=400">
+        <img src="https://m.media-amazon.com/images/I/6115Kf5IG7L.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/81wqD12RieL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71-sMHPhmzL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+
+        <h1>Best Sellers from Home Page</h1>
+        <img src="https://m.media-amazon.com/images/I/61eHWRyP6AL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/61L4fkWALhL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71qs3hHvSEL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71pz6OtSOoL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71pSHjmMFaL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/61iLGEonFzL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="200"
+            height="400">
+        <img src="https://m.media-amazon.com/images/I/71t3fo1++FL.AC_CR0%2C0%2C0%2C0_SX470_SY492.jpg" alt="" width="205"
+            height="400">
+
+        <button><i class="fa-solid fa-download"></i>Share</button>
+        <h3>Share this page with your friends.</h3>
+
+
+    </section>
+
+    <div class="bar">
+        <h3><a href="#Home">back to top</a></h3>
+    </div>
+
+
+    <footer>
+
+
+        <div class="copyright">
+            <div class="content">
+                <div>
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Amazon Cares</a></li>
+                        <li><a href="#">Gift a Smile</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect with Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li><a href="#">Sell on Amazon</a></li>
+                        <li><a href="#">Amazon Associates</a></li>
+                        <li><a href="#">Become an Affiliate</a></li>
+                        <li><a href="#">Advertise Your Products</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns & Replacements</a></li>
+                        <li><a href="#">Shipping Rates & Policies</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="end">
+            <p>&copy; 2024 Amazon.com, Inc. or its affiliates</p>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>

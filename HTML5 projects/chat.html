@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #ebe8f9;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            height: 100%;
+            width: 100%;
+            background-color: #f7f7fb;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #d9b0ff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+            min-height: 100%;
+            width: 100%;
+        }
+
+        .greeting {
+            text-align: left;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .greeting img {
+            border-radius: 50%;
+            margin-right: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .greeting p {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .greeting span {
+            font-size: 0.9em;
+            color: #f4f0ff;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            padding: 15px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #7a56b7;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu-item i {
+            font-size: 1.2em;
+        }
+
+        .menu-item:hover {
+            background-color: #d0a4f0;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            background-color: #f5e9ff;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .chat-item {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .chat-item img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-item.active {
+            background-color: #c7a7ef;
+        }
+
+        .chat-item:hover {
+            background-color: #e0c9ff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Chat Area */
+        .chat-area {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .chat-header p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .chat-header span {
+            color: #999;
+        }
+
+        .chat-content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            max-width: 60%;
+            font-size: 0.9em;
+        }
+
+        .received {
+            background-color: #f2f2f2;
+            margin-left: 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sent {
+            background-color: #e1c8f6;
+            margin-left: auto;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-input {
+            padding: 10px;
+            background-color: #f7f7f9;
+            display: flex;
+            border-top: 1px solid #ddd;
+            align-items: center;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f0eef7;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-input button {
+            background-color: #8e44ad;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #732d91;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Right Widgets */
+        .right-widgets {
+            background-color: #f7f7f9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .widget {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .widget:hover {
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .widget p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .widget ul {
+            list-style: none;
+        }
+
+        .widget ul li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .reminders ul li {
+            color: #444;
+        }
+
+        /* Tool Box */
+        .tool-box ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .tool-box ul li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ebe8f9;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100px;
+            height: 70px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .tool-box ul li i {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .tool-box ul li p {
+            font-size: 0.8em;
+            text-align: center;
+            margin: 0;
+        }
+
+        .tool-box ul li:hover {
+            background-color: #d4c9ff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="greeting">
+                <img style="border-radius: 100%; width: 90px; height: 90px; object-fit: cover;"
+                    src="https://st2.depositphotos.com/2001755/5408/i/450/depositphotos_54081723-stock-photo-beautiful-nature-landscape.jpg"
+                    alt="Jamaica">
+                <br>
+                <p>Hi, Jamaica!</p>
+                <span style="padding: 20px;">Monday, January 27, 2023</span>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><i class="fas fa-comments"></i> Chats</div>
+                <div class="menu-item"><i class="fas fa-video"></i> Video Chats</div>
+                <div class="menu-item"><i class="fas fa-address-book"></i> Contacts</div>
+                <div class="menu-item"><i class="fas fa-folder"></i> Folders</div>
+            </div>
+            <div class="chat-list">
+                <!-- Chat contacts with avatar images -->
+                <div class="chat-item active">
+                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Allie Moore">
+                    Allie Moore
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Jay Cruz">
+                    <p style="color: #444;">Jay Cruz</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Olivia Parker">
+                    <p style="color: #444;">Olivia Parker</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/women/9.jpg" alt="Sophia Bennett">
+                    <p style="color: #444;">Sophia Bennett</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Noah Carter">
+                    <p style="color: #444;">Noah Carter</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Liam Harris">
+                    <p style="color: #444;">Liam Harris</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="Ava Morgan">
+                    <p style="color: #444;">Ava Morgan</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Mason Clark">
+                    <p style="color: #444;">Mason Clark</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Chloe Taylor">
+                    <p style="color: #444;">Chloe Taylor</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Ethan Lewis">
+                    <p style="color: #444;">Ethan Lewis</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Benjamin Scott">
+                    <p style="color: #444;">Benjamin Scott</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <div class="chat-header">
+                <p>Allie Moore</p>
+                <span>January 27, 2023</span>
+            </div>
+            <div class="chat-content">
+                <div class="message received">
+                    <p>Hey fella! How is your day.</p>
+                </div>
+                <div class="message sent">
+                    <p>Not bad. Thanks for asking.</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Chat Away...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </main>
+
+        <aside class="right-widgets">
+            <div class="widget chat-files">
+                <p>Chat Files</p>
+                <ul>
+                    <li>128 Photos</li>
+                    <li>13 Links</li>
+                    <li>72 Attachments</li>
+                </ul>
+            </div>
+            <div class="widget reminders">
+                <p>Reminders</p>
+                <ul>
+                    <li>Design Meeting @ 10:30</li>
+                    <li>Email Derrick about Scope</li>
+                    <li>Create new group for sprint</li>
+                </ul>
+            </div>
+            <div class="widget tool-box">
+                <p>Tool Box</p>
+                <ul>
+                    <li><i class="fas fa-address-book"></i>
+                        <p>Contacts</p>
+                    </li>
+                    <li><i class="fas fa-camera"></i>
+                        <p>Camera</p>
+                    </li>
+                    <li><i class="fas fa-microphone"></i>
+                        <p>Microphone</p>
+                    </li>
+                    <li><i class="fas fa-clock"></i>
+                        <p>Time Zone</p>
+                    </li>
+                    <!-- Add more toolbox items -->
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>

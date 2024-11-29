@@ -1,0 +1,291 @@
+body {
+    background-color: #306D85;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.ocean {
+    margin: 40px auto 0;
+    overflow: hidden;
+}
+
+.circle {
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background: linear-gradient(#2a5c73, #244b5e);
+    border: 6px solid #4a8ca0;
+}
+
+.bubble {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #4a8ca0;
+    opacity: 0.9;
+    animation: bubble-move 2s ease-in-out infinite;
+}
+
+.submarine {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    animation: dive 3s ease-in-out infinite, rotate 3s ease-in-out infinite;
+}
+
+.body {
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    background: linear-gradient(#d93a54, #b02d41);
+    border-radius: 40px;
+    left: 75px;
+    top: 110px;
+}
+
+.window {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    background: linear-gradient(#244b5e, #1d3c4c);
+    border: 3px solid #d93a54;
+    border-radius: 50%;
+    top: 23px;
+    left: 95px;
+}
+
+.window::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-top: 3px solid white;
+    transform: rotate(-45deg);
+    top: 3px;
+    left: 3px;
+}
+
+.engine {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #b02d41;
+    border-radius: 50%;
+    border: 5px solid #d93a54;
+    top: 32px;
+    left: 53px;
+}
+
+.engine::before,
+.engine::after {
+    content: '';
+    position: absolute;
+    background: white;
+    opacity: 0.8;
+    animation: spin 0.9s linear infinite;
+}
+
+.engine::after {
+    width: 20px;
+    height: 4px;
+    top: 9px;
+    left: 0px;
+}
+
+.engine::before {
+    width: 4px;
+    height: 20px;
+    top: 0px;
+    left: 9px;
+}
+
+.light {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 150px 40px;
+    border-color: transparent transparent #39727c transparent;
+    top: 40px;
+    left: 160px;
+    transform: rotate(-50deg);
+}
+
+.light::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 13px;
+    border-radius: 5px;
+    background-color: #b02d41;
+    top: -5px;
+    left: -10px;
+}
+
+.tail {
+    position: absolute;
+    width: 30px;
+    height: 70px;
+    background: linear-gradient(#d93a54, #b02d41);
+    border-radius: 7px;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tail::after {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 25px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #b02d41, #d26174 50%);
+    animation: tail-move 0.1s linear infinite;
+    top: 5px;
+    left: 7px;
+}
+
+.tail::before {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 25px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #b02d41, #d26174 50%);
+    animation: tail-move 0.1s linear infinite;
+    top: 35px;
+    left: 7px;
+}
+
+.top {
+    position: absolute;
+    width: 65px;
+    height: 25px;
+    background: linear-gradient(#d93a54, #b02d41);
+    border-radius: 10px 10px 0 0;
+    top: 26px;
+    left: 95px;
+    transform: translateX(25px) translateY(60px);
+}
+
+.scope {
+    position: absolute;
+    width: 7px;
+    height: 20px;
+    background: #d93a54;
+    border-radius: 5px 5px 0 0;
+    top: -20px;
+    left: 29px;
+}
+
+.lights {
+    position: relative;
+    width: 53px;
+    height: 13px;
+    background: linear-gradient(#b02d41, #8a2134);
+    border-radius: 10px;
+    top: 7px;
+    left: 6px;
+}
+
+.led {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    /* padding: 5%; */
+    border-radius: 50%;
+    background: white;
+    margin: 4px;
+    margin-left: 5px;
+    animation: blink 0.5s linear infinite;
+}
+
+.led::after,
+.led::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+}
+
+.led::after {
+    left: 17px;
+}
+
+.led::before {
+    left: 34px;
+}
+
+@keyframes bubble-move {
+    0% {
+        top: 160px;
+        left: 150px;
+    }
+
+    100% {
+        top: -10px;
+        left: 50px;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes tail-move {
+    100% {
+        background-position: 0 -20px;
+    }
+}
+
+@keyframes dive {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}

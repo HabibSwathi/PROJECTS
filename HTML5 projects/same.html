@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Dialog Box with Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        button {
+            position: absolute;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: orangered;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .dialog-box {
+            position: relative;
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .dialog-box .circle {
+            width: 80px;
+            height: 80px;
+            background-color: #4285F4;
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+            left: calc(50% - 40px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle .checkmark {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            stroke-width: 2;
+            stroke: white;
+            stroke-miterlimit: 10;
+            box-shadow: inset 0px 0px 0px #4285F4;
+            animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+        }
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none;
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        .dialog-box h2 {
+            margin-top: 50px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .dialog-box p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .dialog-box button {
+            margin-top: 20px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0 auto;
+            /* Center button */
+        }
+
+        .dialog-box button:hover {
+            background-color: #357ae8;
+        }
+
+        .dialog-box {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button style="box-shadow: 3px 3px 0px #0c0c0c;" id="show-dialog">for Success</button>
+
+    <div id="dialog-box" class="dialog-box">
+        <div class="circle">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                <path class="checkmark__check" fill="none" stroke="white" stroke-width="5" d="M14 27l7 7 16-16" />
+            </svg>
+        </div>
+        <h2>Success</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        <button id="close-dialog">OKAY</button>
+    </div>
+
+    <script>
+        const dialogBox = document.getElementById("dialog-box");
+        const showDialogButton = document.getElementById("show-dialog");
+        const closeDialogButton = document.getElementById("close-dialog");
+
+        showDialogButton.addEventListener("click", function () {
+            dialogBox.style.display = "block";
+        });
+
+        closeDialogButton.addEventListener("click", function () {
+            dialogBox.style.display = "none";
+        });
+    </script>
+
+</body>
+
+</html>

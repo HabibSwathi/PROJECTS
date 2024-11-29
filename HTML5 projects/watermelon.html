@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermelon</title>
+    <style>
+        .watermelon, .slice {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+}
+
+.watermelon div, .slice div, i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+}
+
+i {
+	border-top: 0.3em solid #626262;
+	border-bottom: 0.3em solid #626262;
+	border-left: 0.15em solid #626262;
+	border-right: 0.15em solid #626262;
+	border-radius: 0.15em / 0.3em;
+}
+
+.watermelon {
+	div:first-of-type {
+		border: 5.9em solid #90B73F;
+		border-top: 5.9em solid transparent;
+	}
+
+	div:nth-of-type(2) {
+		border: 5.7em solid #D9E38F;
+		border-top: 5.7em solid transparent;
+	}
+
+	div:nth-of-type(3){
+		border: 5.2em solid #FDFAF7;
+		border-top: 5.2em solid transparent;
+	}
+
+	div:last-of-type {
+		border: 5em solid #f66687;
+		border-top: 5em solid transparent;
+		
+		i:first-of-type {
+			top: 30px;
+			left: 15px;
+			transform: rotate(-12deg);
+		}
+		
+		i:nth-of-type(2) {
+			top: 35px;
+			left: -20px;
+			transform: rotate(20deg);
+		}
+		
+		i:nth-of-type(3) {
+			top: 10px;
+			left: 30px;
+			transform: rotate(100deg);
+		}
+		
+		i:nth-of-type(4) {
+			left: 20px;
+			top: -5px;
+			transform: rotate(80deg);
+		}
+		
+		i:nth-of-type(5) {
+			left: -45px;
+			transform: rotate(90deg);
+		}
+		
+		i:nth-of-type(6), i:nth-of-type(7) {left: -30px;}
+		
+		i:nth-of-type(6) {
+			top: 15px;
+			transform: rotate(65deg);
+		}
+		
+		i:nth-of-type(7) {
+			top: -15px;
+			transform: rotate(102deg);
+		}
+		
+		i:nth-of-type(8) {
+			left: 35px;
+			top: -20px;
+			transform: rotate(75deg);
+		}
+		
+		i:nth-of-type(9) {
+			left: -45px;
+			top: -30px;
+			transform: rotate(115deg);
+		}
+		
+		i:last-of-type {
+			top: 15px;
+			left: -5px;
+		}
+	}
+}
+
+
+.slice {
+    transition: 0.5s;
+	transform: translateY(0px);
+
+	div:first-of-type {
+		border: 5.9em solid transparent;
+		border-top: 5.9em solid #90B73F;
+	}
+
+	div:nth-of-type(2) {
+		border: 5.7em solid transparent;
+		border-top: 5.7em solid #D9E38F;
+	}
+
+	div:nth-of-type(3) {
+		border: 5.2em solid transparent;
+		border-top: 5.2em solid #FDFAF7;
+	}
+
+	div:last-of-type {
+		border: 5em solid transparent;
+		border-top: 5em solid #f66687;
+		
+		i:first-of-type{
+			top: -40px;
+			left: 15px;
+			transform: rotate(12deg);
+		}
+		i:nth-of-type(2) {
+			top: -45px;
+			left: -20px;
+			transform: rotate(-12deg);
+		}
+		i:nth-of-type(3) {
+			top: -50px;
+			left: 1px;
+			transform: rotate(6deg);
+		}
+		
+		i:last-of-type {top: -20px}
+	}
+}
+.slice:hover{
+    transform: translateY(-25px);
+    transition: 0.5s;
+}
+
+body {
+	background-color: #FFEDED;
+}
+
+    </style>
+</head>
+<body>
+    <section class="watermelon">
+        <div></div><div></div><div></div>
+        <div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+    
+    <section class="slice">
+        <div></div><div></div><div></div>
+        <div><i></i><i></i><i></i><i></i></div>
+    </section>
+</body>
+</html>
