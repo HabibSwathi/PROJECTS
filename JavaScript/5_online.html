@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Interview</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .questions {
+            flex: 1;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .questions h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .question textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            outline: none;
+        }
+
+        .logs {
+            flex: 0.5;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logs h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .logs p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .logs button {
+            position: fixed;
+            display: flex;
+            bottom: 50px;
+            right: 50px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .logs button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="questions">
+            <h3>Interview Questions</h3>
+            <div class="question">
+                <label for="q1">1. What are the differences between Java and JavaScript?</label>
+                <textarea id="q1" onselect="logEvent('selected text', 'Question 1')"
+                    oncopy="logEvent('copied text', 'Question 1')" oncut="logEvent('cut text', 'Question 1')"
+                    onpaste="logEvent('pasted text', 'Question 1')"></textarea>
+            </div>
+            <div class="question">
+                <label for="q2">2. What are Data Types in JavaScript?</label>
+                <textarea id="q2" onselect="logEvent('selected text', 'Question 2')"
+                    oncopy="logEvent('copied text', 'Question 2')" oncut="logEvent('cut text', 'Question 2')"
+                    onpaste="logEvent('pasted text', 'Question 2')"></textarea>
+            </div>
+            <div class="question">
+                <label for="q3">3. Which symbol is used for comments in JavaScript? </label>
+                <textarea id="q3" onselect="logEvent('selected text', 'Question 3')"
+                    oncopy="logEvent('copied text', 'Question 3')" oncut="logEvent('cut text', 'Question 3')"
+                    onpaste="logEvent('pasted text', 'Question 3')"></textarea>
+            </div>
+            <div class="question">
+                <label for="q4">4. What would be the result of 3+2+”7″?</label>
+                <textarea id="q4" onselect="logEvent('selected text', 'Question 4')"
+                    oncopy="logEvent('copied text', 'Question 4')" oncut="logEvent('cut text', 'Question 4')"
+                    onpaste="logEvent('pasted text', 'Question 4')"></textarea>
+            </div>
+            <div class="question">
+                <label for="q5">5. What is the use of the isNaN function?</label>
+                <textarea id="q5" onselect="logEvent('selected text', 'Question 5')"
+                    oncopy="logEvent('copied text', 'Question 5')" oncut="logEvent('cut text', 'Question 5')"
+                    onpaste="logEvent('pasted text', 'Question 5')"></textarea>
+            </div>
+        </div>
+
+        <div class="logs">
+            <h3>Activity Logs</h3>
+            <div id="log-content"></div>
+            <button onclick="clearLogs()">Clear Logs</button>
+        </div>
+    </div>
+
+    <script>
+        const logContent = document.getElementById("log-content");
+
+        function logEvent(action, question) {
+            const date = new Date();
+            const timestamp = `${date.getHours()}H:${date.getMinutes()}M:${date.getSeconds()}S`;
+            logContent.innerHTML += `<p>User ${action} in "${question}" at ${timestamp}.</p>`;
+            logContent.scrollTop = logContent.scrollHeight; // Auto-scroll to the latest log
+        }
+
+        function clearLogs() {
+            logContent.innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>

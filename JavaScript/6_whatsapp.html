@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Chat Interface</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #chat-container {
+            display: flex;
+            height: 100%;
+        }
+
+        #sidebar {
+            width: 30%;
+            background-color: #2c2c2c;
+            border-right: 1px solid #3c3c3c;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #account-interface {
+            padding: 15px;
+            background-color: #282828;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            box-sizing: border-box;
+        }
+
+        #account-interface input,
+        #account-interface button {
+            width: 100%;
+            max-width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            color: #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        #account-interface input:focus {
+            outline: none;
+            border-color: #4caf50;
+            box-shadow: 0 0 5px #4caf50;
+        }
+
+        #account-interface button {
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        #account-interface button:hover {
+            background-color: #45a049;
+        }
+
+        #create-account {
+            margin: 5px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        #create-account:hover {
+            background-color: #45a049;
+        }
+
+        #chat-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .chat-item {
+            padding: 10px;
+            border-bottom: 1px solid #3c3c3c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .chat-item:hover {
+            background-color: #444;
+        }
+
+        .chat-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #5c5c5c;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .chat-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-details .chat-name {
+            font-weight: bold;
+            color: white;
+        }
+
+        .chat-details .last-message {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        #chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            color: #999;
+        }
+
+        #chat-area h2 {
+            margin: 0;
+            color: white;
+        }
+
+        #chat-area p {
+            margin: 5px 0;
+        }
+
+        #chat-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #chat-list::-webkit-scrollbar-thumb {
+            background-color: #5a5b5a;
+            border-radius: 4px;
+        }
+
+
+        #chat-list::-webkit-scrollbar-track {
+            background-color: #2c2c2c;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat-container">
+        <div id="sidebar">
+            <button id="create-account">Create Account</button>
+            <div id="account-interface">
+                <input type="text" id="account-name" placeholder="Enter account name">
+                <input type="text" id="profile-url" placeholder="Enter profile image URL">
+                <input type="text" id="last-message" placeholder="Enter last message">
+                <button id="add-account">Add Account</button>
+            </div>
+            <div id="chat-list"></div>
+        </div>
+        <div id="chat-area">
+            <h2>Welcome to Chat</h2>
+            <p>Select a chat to view details</p>
+        </div>
+    </div>
+    <script>
+        const chatData = [{
+                name: "Meena",
+                image: "https://img.favpng.com/13/13/18/peter-beatrice-insurance-lorem-ipsum-industry-business-printing-png-favpng-j7qfpQSXsRruNLCRdxuEqPiF2_t.jpg",
+                message: "text 1",
+                id: 1
+            },
+            {
+                name: "Deepa",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkuutAMRbhkCsNonotv1Rlg2pFF5MRscd88A&s",
+                message: "text 2'",
+                id: 2
+            },
+            {
+                name: "Dinesh",
+                image: "https://img.favpng.com/5/15/6/user-profile-lorem-ipsum-printing-png-favpng-y3YbvrPcrZsLkN2GTYgK2HDvT.jpg",
+                message: "text 3",
+                id: 3
+            },
+            {
+                name: "Umesh",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdJllPC9CVXDbFxgC-S01VeFaNGQ25rkzrvw&s",
+                message: "text 4",
+                id: 4
+            },
+            {
+                name: "Uday",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfr263MDTE_zhQTUYw4t4ndzJTOT4E_qy3bg&s",
+                message: "text 5",
+                id: 5
+            },
+            {
+                name: "Yuvaraj",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp7c2a2u2Ja3X7VVlTIFhcKSasytLLzI8kWQ&s",
+                message: "text 6",
+                id: 6
+            },
+            {
+                name: "Nandish",
+                image: "https://img.freepik.com/free-photo/side-view-ofserious-man_23-2148946213.jpg",
+                message: "text 7",
+                id: 7
+            },
+            {
+                name: "Manju",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJLKmCskFU9t9-VWsTpa4raJUUxPSKAKjcGZQfCZmHgr5QDTHMhmX_m2G51V49ZOwZEs&usqp=CAU",
+                message: "text 8",
+                id: 8
+            },
+            {
+                name: "Arun",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvmBUOAREt-ZaLlYwiz1h6zlTT1vVXn4S8Jw&s",
+                message: "text 9",
+                id: 9
+            },
+            {
+                name: "Priya",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXSIOKUaVUmwPg_LpWVXr27g83wgWGox7xphPuHjGL0VQ4GnKbJdpXCJ6maf2d5kCF_F0&usqp=CAU",
+                message: "text 10",
+                id: 10
+            },
+        ];
+
+        const chatList = document.getElementById("chat-list");
+        const chatArea = document.getElementById("chat-area");
+        const createAccountButton = document.getElementById("create-account");
+        const accountInterface = document.getElementById("account-interface");
+        const addAccountButton = document.getElementById("add-account");
+        const accountNameInput = document.getElementById("account-name");
+        const profileUrlInput = document.getElementById("profile-url");
+        const lastMessageInput = document.getElementById("last-message");
+
+        function renderChats() {
+            chatList.innerHTML = "";
+            chatData.forEach(chat => {
+                const chatItem = document.createElement("div");
+                chatItem.classList.add("chat-item");
+                chatItem.dataset.id = chat.id;
+
+                const chatIcon = document.createElement("div");
+                chatIcon.classList.add("chat-icon");
+                const chatImage = document.createElement("img");
+                chatImage.src = chat.image;
+                chatIcon.appendChild(chatImage);
+
+                const chatDetails = document.createElement("div");
+                chatDetails.classList.add("chat-details");
+                const chatName = document.createElement("div");
+                chatName.classList.add("chat-name");
+                chatName.textContent = chat.name;
+                const lastMessage = document.createElement("div");
+                lastMessage.classList.add("last-message");
+                lastMessage.textContent = chat.message;
+
+                chatDetails.appendChild(chatName);
+                chatDetails.appendChild(lastMessage);
+                chatItem.appendChild(chatIcon);
+                chatItem.appendChild(chatDetails);
+                chatList.appendChild(chatItem);
+                chatItem.addEventListener("click", () => displayChat(chat));
+            });
+        }
+
+        function displayChat(chat) {
+            chatArea.innerHTML = `
+                <h2>Chat with ${chat.name}</h2>
+                <img src="${chat.image}" alt="${chat.name}" style="width:80px;height:80px;border-radius:50%;margin:10px 0;">
+                <p>Last message: ${chat.message}</p>
+            `;
+        }
+
+        createAccountButton.addEventListener("click", () => {
+            accountInterface.style.display = "flex";
+            createAccountButton.style.display = "none";
+        });
+
+        addAccountButton.addEventListener("click", () => {
+            const name = accountNameInput.value.trim();
+            const image = profileUrlInput.value.trim() ||
+                "https://cdn.vectorstock.com/i/1000v/66/13/default-avatar-profile-icon-social-media-user-vector-49816613.jpg";
+            const message = lastMessageInput.value.trim();
+
+            if (name && message) {
+                chatData.push({
+                    name,
+                    image,
+                    message,
+                    id: chatData.length + 1
+                });
+                renderChats();
+                accountNameInput.value = "";
+                profileUrlInput.value = "";
+                lastMessageInput.value = "";
+                accountInterface.style.display = "none";
+                createAccountButton.style.display = "block";
+            }
+        });
+
+        renderChats();
+    </script>
+</body>
+
+</html>

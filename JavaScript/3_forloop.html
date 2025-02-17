@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Webpage</title>
+</head>
+
+<body>
+    <script>
+        // Create and append the header section
+        let headerTag = document.createElement('header');
+        headerTag.id = 'header';
+
+        let nav = document.createElement('nav');
+        nav.style.display = 'flex';
+        nav.style.justifyContent = 'space-between';
+        nav.style.padding = '10px 20px';
+        nav.style.background = '#fff';
+
+        let logo = document.createElement('div');
+        logo.innerText = 'Nicepage';
+        logo.style.fontWeight = 'bold';
+
+        let ul = document.createElement('ul');
+        ul.style.display = 'flex';
+        ul.style.listStyle = 'none';
+        ul.style.margin = '0';
+        ul.style.padding = '0';
+
+        let navItems = ['Home', 'About', 'Contact'];
+        navItems.forEach(item => {
+            let li = document.createElement('li');
+            li.style.margin = '0 10px';
+
+            let a = document.createElement('a');
+            a.href = '#';
+            a.style.textDecoration = 'none';
+            a.style.color = 'black';
+            a.innerText = item;
+
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+
+        nav.appendChild(logo);
+        nav.appendChild(ul);
+        headerTag.appendChild(nav);
+        document.body.appendChild(headerTag);
+
+        // Create and append the container section
+        let containerTag = document.createElement('section');
+        containerTag.id = 'container';
+        containerTag.className = 'container';
+
+        let title = document.createElement('h1');
+        title.innerText = 'Start your career with a leap';
+        title.style.fontSize = '2.5em';
+        title.style.color = 'white';
+        title.style.textAlign = 'center';
+
+        let description = document.createElement('p');
+        description.innerText =
+            "Want your future to start right now? We've got the tools to make it happen. Real skills for real jobs.";
+        description.style.fontSize = '1.2em';
+        description.style.margin = '20px 0';
+        description.style.textAlign = 'center';
+        description.style.color = 'white';
+
+        let img = document.createElement('img');
+        img.src = 'https://img.freepik.com/free-photo/man-woman-working-project_23-2149060389.jpg';
+        img.alt = 'Image from Freepik';
+        img.style.width = '300px';
+        img.style.borderRadius = '10px';
+        img.style.display = 'block';
+        img.style.margin = '20px auto';
+
+        let buttonContainer = document.createElement('div');
+        buttonContainer.style.textAlign = 'center';
+
+        let button1 = document.createElement('button');
+        button1.innerText = 'See All';
+        button1.style.padding = '10px 20px';
+        button1.style.background = 'purple';
+        button1.style.color = 'white';
+        button1.style.border = 'none';
+        button1.style.borderRadius = '5px';
+        button1.style.cursor = 'pointer';
+        button1.style.marginRight = '10px';
+
+        let button2 = document.createElement('button');
+        button2.innerText = 'Our Contact';
+        button2.style.padding = '10px 20px';
+        button2.style.background = 'transparent';
+        button2.style.color = 'white';
+        button2.style.border = '2px solid white';
+        button2.style.borderRadius = '5px';
+        button2.style.cursor = 'pointer';
+
+        buttonContainer.appendChild(button1);
+        buttonContainer.appendChild(button2);
+
+        containerTag.style.textAlign = 'center';
+        containerTag.style.color = 'white';
+        containerTag.style.background = 'black';
+        containerTag.style.padding = '50px';
+
+        containerTag.appendChild(title);
+        containerTag.appendChild(description);
+        containerTag.appendChild(img);
+        containerTag.appendChild(buttonContainer);
+
+        document.body.appendChild(containerTag);
+
+        // Create a table dynamically
+        let tableTag = document.createElement('table');
+        tableTag.style.borderCollapse = 'collapse';
+        tableTag.border = '1';
+        tableTag.cellPadding = '15';
+        tableTag.cellSpacing = '0';
+
+        let tr1 = document.createElement('tr');
+        tr1.style.backgroundColor = 'red';
+
+        let headers = ['SI.No', 'NAME', 'ADDRESS', 'REMARKS'];
+        headers.forEach(headerText => {
+            let th = document.createElement('th');
+            th.innerText = headerText;
+            th.style.border = '2px solid #fff';
+            th.style.color = '#fff';
+            th.style.padding = '10px';
+            tr1.appendChild(th);
+        });
+
+        // tableTag.appendChild(tr1);
+
+        // Append the table to the container
+        containerTag.appendChild(tableTag);
+    </script>
+</body>
+
+</html>
